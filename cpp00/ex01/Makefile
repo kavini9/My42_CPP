@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/25 21:26:31 by wweerasi          #+#    #+#              #
-#    Updated: 2025/08/08 20:43:08 by wweerasi         ###   ########.fr        #
+#    Created: 2025/08/08 20:39:46 by wweerasi          #+#    #+#              #
+#    Updated: 2025/08/08 20:50:51 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
