@@ -6,7 +6,16 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:20 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/08 21:01:21 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:58:13 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
+class contact
+{
+    private:
+        
+}
+#endif
