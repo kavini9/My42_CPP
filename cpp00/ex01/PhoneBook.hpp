@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/12 21:09:34 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:01:15 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 //#include <iostream>
 #include <string>
+#include "Contact.hpp"
 
 class PhoneBook
 {
@@ -26,9 +27,9 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
         
-        void    save_contact();
-        void    view_list();
-        void    view_contact();
+        void    saveContact();
+        void    viewList();
+        void    viewContact();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:13 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/12 21:04:25 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:51:07 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 Contact::Contact()
 {
-	_first_name = "";
-	_last_name = "";
-	_nick_name = "";
-	_phone_number = "";
-	_darkest_secret = "";
+	// m_firstName = "";
+	// m_lastName = "";
+	// m_nickName = "";
+	// m_phoneNumber = "";
+	// m_darkestSecret = "";
 }
 
-Contact::Contact(std::string first_name, std::string last_name,
-            std::string nick_name, std::string phone_number,
-            std::string darkest_secret)
+Contact::Contact(std::string *contactFields)
 {
-	_first_name = first_name;
-	_last_name = last_name;
-	_nick_name = nick_name;
-	_phone_number = phone_number;
-	_darkest_secret = darkest_secret;
+	m_contactFields[0] = contactFields[0];
+	m_contactFields[1] = contactFields[1];
+	m_contactFields[2] = contactFields[2];
+	m_contactFields[3] = contactFields[3];
+	m_contactFields[4] = contactFields[4];
+	// m_firstName = firstName;
+	// m_lastName = lastName;
+	// m_nickName = nickName;
+	// m_phoneNumber = phoneNumber;
+	// m_darkestSecret = darkestSecret;
 }
 
 Contact::~Contact(){}

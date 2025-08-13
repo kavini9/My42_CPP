@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:20 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/12 20:55:38 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:49:47 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@
 class Contact
 {
     private:
-        std::string _first_name;
-    	std::string _last_name;
-		std::string _nick_name;
-		std::string _phone_number;
-		std::string _darkest_secret;
+        std::string m_contactFields[5];
+        // std::string m_firstName;
+    	// std::string m_lastName;
+		// std::string m_nickName;
+		// std::string m_phoneNumber;
+		// std::string m_darkestSecret;
         
     public:
 		Contact(void);
-        Contact(std::string first_name, std::string last_name,
-            std::string nick_name, std::string _hone_number,
-            std::string darkest_secret);
+        Contact(std::string *contactFields);
 		~Contact(void);
 
-        void    get_contact();
-        bool    set_contact();
+        void    getContact();
+        bool    setContact();
 };
 
 #endif
