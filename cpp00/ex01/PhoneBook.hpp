@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/13 19:01:15 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/14 23:11:27 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@
 
 class PhoneBook
 {
-    private: 
-        Contact _contacts[8];
-        int     _head;
-    
-    public:
+	private:
+		Contact m_contacts[8];
+		int		m_nextUp;
+	
+	public:
 		PhoneBook();
 		~PhoneBook();
-        
-        void    saveContact();
-        void    viewList();
-        void    viewContact();
+	
+		void	addContact();
+		void	searchContact();
 };
 
 #endif
