@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 21:13:48 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/20 21:30:28 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/21 22:33:52 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 Zombie* newZombie( std::string name )
 {
-    
+	return new Zombie(name);
 }

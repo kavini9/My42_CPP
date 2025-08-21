@@ -6,15 +6,19 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 19:42:01 by wweerasi          #+#    #+#              #
-#    Updated: 2025/08/20 19:42:05 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/08/21 22:50:08 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = zombie
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
+SRC = main.cpp \
+	Zombie.cpp \
+	newZombie.cpp \
+	randomChump.cpp
+	 
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -22,9 +26,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-
-# %.o: %.cpp
-# 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
