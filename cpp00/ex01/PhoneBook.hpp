@@ -6,15 +6,25 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/14 23:11:27 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/22 22:54:51 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#define SET_GRN		"\033[32m"
+#define SET_RED		"\033[31m"
+#define SET_YLW		"\033[33m"
+#define SET_B_YLW	"\033[1;33m"
+#define SET_B_BLK	"\033[1;30m"
+#define RESET		"\033[0m"
+
 #include <iomanip>
+#include <climits>
+#include <limits>
 #include "Contact.hpp"
+
 
 class PhoneBook
 {
