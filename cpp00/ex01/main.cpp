@@ -23,16 +23,16 @@ int main(void)
 		std::cout << "Enter command [ADD, SEARCH, EXIT]: ";
 		if (!std::getline(std::cin, command))//maybe we can add this to the end of the line and catch eof from add and serch too
 		{
-			std::cout << "\nEOF reached. Exiting phonebook...\n";
+			std::cout << "\nInput stream closed. Exiting phonebook!" << std::endl;
 			break;
 		}
 		else if (command == "ADD")//make sure you check for the eof inside this
 			phoneBook.addContact();
-		else if (command == "SERACH")//make sure you check for the eof inside this
+		else if (command == "SEARCH")//make sure you check for the eof inside this
 			phoneBook.searchContact();
 		else if (command == "EXIT")
 		{
-			std::cout << "\nExiting phonebook!\n";
+			std::cout << "Exiting phonebook!\n";
 			break;
 		}
 		else

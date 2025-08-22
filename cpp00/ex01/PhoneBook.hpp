@@ -13,16 +13,17 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-//#include <iostream>
-#include <string>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
-		Contact m_contacts[8];
-		int		m_nextUp;
-	
+		Contact						_contacts[8];
+		static const std::string	_fieldNames[5];
+		int							_nextID;
+		bool						_phonebookFull;
+		
 	public:
 		PhoneBook();
 		~PhoneBook();

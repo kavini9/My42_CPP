@@ -12,20 +12,21 @@
 
 #include "Contact.hpp"
 
-Contact::Contact()
-{
-
-}
+Contact::Contact(){}
 
 Contact::Contact(std::string *contactFields)
 {
-	m_contactFields[0] = contactFields[0];
-	m_contactFields[1] = contactFields[1];
-	m_contactFields[2] = contactFields[2];
-	m_contactFields[3] = contactFields[3];
-	m_contactFields[4] = contactFields[4];
+    for (int i = 0; i < 5; i++) 
+	{
+        _contactFields[i] = contactFields[i];
+    }
 }
 
 Contact::~Contact(){}
+
+std::string* Contact::getContact() 
+{
+    return _contactFields;
+}
 
 

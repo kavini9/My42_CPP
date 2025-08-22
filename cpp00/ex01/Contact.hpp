@@ -19,15 +19,14 @@
 class Contact
 {
 	private:
-		std::string m_contactFields[5];
+		std::string _contactFields[5];
 	
 	public:
 		Contact(void);
 		Contact(std::string *contactFields);
 		~Contact(void);
 
-		void	getContact();
-		bool	setContact();
+		std::string* getContact();
 };
 
 #endif
