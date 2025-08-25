@@ -38,13 +38,7 @@ void	PhoneBook::addContact()
 		{
 			std::cout << "Enter " << std::left << std::setw(14) << _fieldNames[i] << std::right << ": ";
 			if (!std::getline(std::cin, inputs[i]))
-			{
-				std::cerr << SET_RED "\nInput stream closed. Add contact cancelled. Returning back to main menu!" RESET << std::endl;
-				std::cin.clear();
-				//std::cin.ignore(INT_MAX, '\n');//<climits>
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');//<limits>
 				return;
-			}
 			attempt++;
 			if (!inputs[i].empty())
 				break;
@@ -53,7 +47,7 @@ void	PhoneBook::addContact()
 				std::cerr << SET_RED "Failed to add contact. Returning back to main menu!" RESET << std::endl;
 				return;
 			}
-			std::cout << SET_RED << _fieldNames[i] << " cannot be empty. " << (3 - attempt) << " more attempt(s) left." RESET << std::endl;
+			std::cout << SET_YLW << _fieldNames[i] << " cannot be empty. " << (3 - attempt) << " more attempt(s) left." RESET << std::endl;
 		}
 	}
 	_contacts[_nextID] = Contact(inputs);
@@ -73,8 +67,7 @@ void	PhoneBook::searchContact()
 		std::cout << SET_RED "Phonebook empty!" RESET << std::endl;
 		return ;
 	}
-	std::cout << " __________ __________ __________ __________ " << std::endl;
-	std::cout << "|" SET_YLW "_____________Phonebook Summary_____________" RESET "|" << std::endl;
+	std::cout << " _____________" SET_YLW "Phonebook Summary" RESET "_____________" << std::endl;
 	std::cout << "|     Index|First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	for (int i = 0; i < 8; i++)
@@ -90,25 +83,20 @@ void	PhoneBook::searchContact()
 		std::cout << std::endl;
 	}
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
-	std::cout << "\nEnter index for full contact details:";
+	std::cout << "Enter index for full contact details: ";
 	if (!std::getline(std::cin, searchID))
-	{
-		std::cerr << SET_RED "\nInput stream closed. Search contact cancelled. Returning back to main menu!" RESET << std::endl;
-		std::cin.clear();
-		//std::cin.ignore(INT_MAX, '\n');//<climits>
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');//<limits>
 		return;
-	}
 	if (searchID.length() == 1 && std::isdigit(searchID[0]))
 	{
 		int id = searchID[0] - '0' - 1;
-		if ((!_phonebookFull && id >= _nextID) || id > 8 || id < 0)//check ths condition
+		if ((!_phonebookFull && id >= _nextID) || id >= 8 || id < 0)//check ths condition
 			std::cerr << SET_RED "Search index out of range. Returning back to main menu!" RESET << std::endl;
 		else
 		{
 			fullContact = _contacts[id].getContact();
 			for (int i = 0; i < 5; i++)
 				std::cout << std::left << std::setw(20) << _fieldNames[i] << std::right << ": " << fullContact[i] << std::endl;
+			std::cout << SET_GRN "Search contact sucessful!" RESET << std::endl;
 		}
 	}
 	else

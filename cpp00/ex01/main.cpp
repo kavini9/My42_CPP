@@ -21,12 +21,13 @@ int main(void)
 	while(true)
 	{
 		std::cout << "Enter command [" SET_B_BLK "ADD, SEARCH, EXIT" RESET "]: ";
-		if (!std::getline(std::cin, command))//maybe we can add this to the end of the line and catch eof from add and serch too
-		{
-			std::cerr << SET_RED "\nInput stream closed. Exiting phonebook!" RESET << std::endl;
-			break;
-		}
-		else if (command == "ADD")//make sure you check for the eof inside this
+		std::getline(std::cin, command);
+		// if (!std::getline(std::cin, command))//maybe we can add this to the end of the line and catch eof from add and serch too
+		// {
+		// 	std::cerr << SET_RED "\nInput stream closed. Exiting phonebook!" RESET << std::endl;
+		// 	break;
+		// }
+		if (command == "ADD")//make sure you check for the eof inside this
 			phoneBook.addContact();
 		else if (command == "SEARCH")//make sure you check for the eof inside this
 			phoneBook.searchContact();
@@ -35,8 +36,13 @@ int main(void)
 			std::cout << SET_B_YLW "Exiting phonebook!" RESET << std::endl;
 			break;
 		}
-		else
+		else if (std::cin.good())
 			std::cerr << SET_RED "Invalid command!" RESET << std::endl;
+		if (std::cin.eof())
+		{
+			std::cerr << SET_RED "\nInput stream closed. Exiting phonebook!" RESET << std::endl;
+			break;
+		}
 	}
 	return (0);
 }

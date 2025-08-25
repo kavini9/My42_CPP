@@ -21,10 +21,7 @@
 #define RESET		"\033[0m"
 
 #include <iomanip>
-#include <climits>
-#include <limits>
 #include "Contact.hpp"
-
 
 class PhoneBook
 {
