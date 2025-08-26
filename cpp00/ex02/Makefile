@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/08/26 19:45:48 by wweerasi          #+#    #+#              #
+#    Updated: 2025/08/26 19:52:32 by wweerasi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = account
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -21,5 +33,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-#diff <(cut -c18- log1.log) <(cut -c18- log2.log)

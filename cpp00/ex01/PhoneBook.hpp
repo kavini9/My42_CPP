@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:01:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/22 22:54:51 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/26 20:14:30 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #define SET_B_BLK	"\033[1;30m"
 #define RESET		"\033[0m"
 
+#include <string>
+#include <iostream>
 #include <iomanip>
 #include "Contact.hpp"
 

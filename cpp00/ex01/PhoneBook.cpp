@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*_____________           */
-/*_____________    :::      ::::::::   */
-/*   PhoneBook.cpp_____________            :+:      :+:    :+:   */
-/*_____________+:+ +:+         +:+     */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
-/*_____________         +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 21:01:23 by wweerasi          #+#    #+#_____________*/
-/*   Updated: 2025/08/22 21:25:45 by wweerasi         ###   ########.fr       */
-/*_____________           */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/26 17:44:23 by wweerasi          #+#    #+#             */
+/*   Updated: 2025/08/26 17:53:52 by wweerasi         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
@@ -44,7 +44,7 @@ void	PhoneBook::addContact()
 				break;
 			else if (attempt == 3)
 			{
-				std::cerr << SET_RED "Failed to add contact. Returning back to main menu!" RESET << std::endl;
+				std::cout << SET_RED "Failed to add contact. Returning back to main menu!" RESET << std::endl;
 				return;
 			}
 			std::cout << SET_YLW << _fieldNames[i] << " cannot be empty. " << (3 - attempt) << " more attempt(s) left." RESET << std::endl;
@@ -90,7 +90,7 @@ void	PhoneBook::searchContact()
 	{
 		int id = searchID[0] - '0' - 1;
 		if ((!_phonebookFull && id >= _nextID) || id >= 8 || id < 0)//check ths condition
-			std::cerr << SET_RED "Search index out of range. Returning back to main menu!" RESET << std::endl;
+			std::cout << SET_RED "Search index out of range. Returning back to main menu!" RESET << std::endl;
 		else
 		{
 			fullContact = _contacts[id].getContact();
@@ -100,5 +100,5 @@ void	PhoneBook::searchContact()
 		}
 	}
 	else
-		std::cerr << SET_RED "Invalid input. Returning back to main menu!" RESET << std::endl;
+		std::cout << SET_RED "Invalid input. Returning back to main menu!" RESET << std::endl;
 }
