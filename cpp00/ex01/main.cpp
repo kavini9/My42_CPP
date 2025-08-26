@@ -11,37 +11,48 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <csignal>
+#include <cstdio>
+
+int g_sig = false;
+
+void sigHandler(int sig)
+{
+	g_sig = sig;
+	std::cerr << SET_RED "\nInterrupt signal received. Exiting phonebook!" RESET << std::endl;
+	std::fclose(stdin);
+}
 
 int main(void)
 {
 	PhoneBook	phoneBook;
 	std::string	command;
-	
+
+	std::signal(SIGINT, sigHandler);
+	std::signal(SIGQUIT, sigHandler);
 	std::cout << SET_B_YLW "Welcome to the Crappy Awesome Phonebook!" RESET << std::endl;
 	while(true)
 	{
 		std::cout << "Enter command [" SET_B_BLK "ADD, SEARCH, EXIT" RESET "]: ";
 		std::getline(std::cin, command);
-		// if (!std::getline(std::cin, command))//maybe we can add this to the end of the line and catch eof from add and serch too
-		// {
-		// 	std::cerr << SET_RED "\nInput stream closed. Exiting phonebook!" RESET << std::endl;
-		// 	break;
-		// }
-		if (command == "ADD")//make sure you check for the eof inside this
+		if (std::cin.bad())
+			return (1);
+		if (command == "ADD")
 			phoneBook.addContact();
-		else if (command == "SEARCH")//make sure you check for the eof inside this
+		else if (command == "SEARCH")
 			phoneBook.searchContact();
 		else if (command == "EXIT")
 		{
 			std::cout << SET_B_YLW "Exiting phonebook!" RESET << std::endl;
 			break;
 		}
-		else if (std::cin.good())
+		else if (std::cin.good() && !g_sig)
 			std::cerr << SET_RED "Invalid command!" RESET << std::endl;
-		if (std::cin.eof())
+		if (std::cin.eof() || g_sig)
 		{
-			std::cerr << SET_RED "\nInput stream closed. Exiting phonebook!" RESET << std::endl;
-			break;
+			if (!g_sig)
+				std::cerr << SET_RED "\nInput stream closed. Exiting phonebook!" RESET << std::endl;
+			return(1 | g_sig);
 		}
 	}
 	return (0);

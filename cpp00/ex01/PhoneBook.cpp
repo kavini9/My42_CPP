@@ -64,7 +64,7 @@ void	PhoneBook::searchContact()
 
 	if (!_phonebookFull && !_nextID)
 	{
-		std::cout << SET_RED "Phonebook empty!" RESET << std::endl;
+		std::cout << SET_YLW "Phonebook empty!" RESET << std::endl;
 		return ;
 	}
 	std::cout << " _____________" SET_YLW "Phonebook Summary" RESET "_____________" << std::endl;
