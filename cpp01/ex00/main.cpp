@@ -24,9 +24,9 @@ int main()
 	catch (std::bad_alloc& ba)
 	{
 		std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
-		return EXIT_FAILURE;
+		return (1);
 	}
 	zombie -> announce();
 	delete zombie;
-	return EXIT_SUCCESS;
+	return (0);
 }

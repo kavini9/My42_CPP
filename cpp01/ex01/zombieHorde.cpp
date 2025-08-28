@@ -14,5 +14,21 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
-    Zombie *horde = new Zombie[N];
+	if (N < 1)
+	{
+		std::cerr << "A horde needs at least one zombie. N must be >= 1" << std::endl;
+		return (nullptr);
+	}	
+	try
+	{
+		Zombie *horde = new Zombie[N];
+		for (int i = 0; i < N; i++)
+			horde[i].setName(name + "_" + std::to_string(i + 1));
+	}
+	catch (std::bad_alloc& ba)
+	{
+		std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
+		return (nullptr);
+	}
+	return (horde);
 }

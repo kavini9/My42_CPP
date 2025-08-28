@@ -18,16 +18,12 @@ int main()
 	int			nbZombie;
 	
 	nbZombie = 5;
-	try
+	zombie = zombieHorde(nbZombie, "Zed");
+	if (zombie)
 	{
-		zombie = zombieHorde(nbZombie, "Chap");
+		for (int i = 0; i < nbZombie; i++)
+			zombie[i].announce();
+		delete[] zombie;
 	}
-	catch (std::bad_alloc& ba)
-	{
-		std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
-		return EXIT_FAILURE;
-	}
-	zombie -> announce();
-	delete zombie;
-	return EXIT_SUCCESS;
+	return (0);
 }

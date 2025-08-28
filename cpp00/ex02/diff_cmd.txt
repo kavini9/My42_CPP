@@ -1,1 +1,8 @@
+
+To create log file with timestamp in name:
+./account >$(date +%Y%m%d_%H%M%S).log
+
+To compare the content:
 diff <(cut -c18- log1.log) <(cut -c18- log2.log)
+or 
+vimdiff log1.log log2.log
