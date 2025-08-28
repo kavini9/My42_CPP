@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 21:02:57 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/21 22:49:19 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/28 16:51:36 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int main()
 {
 	Zombie*     zombie;
-	
+
+	zombie = nullptr;
 	randomChump("Stacky");
 	try
 	{
@@ -23,7 +24,7 @@ int main()
 	}
 	catch (std::bad_alloc& ba)
 	{
-		std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
+		std::cerr << SET_RED "bad_alloc caught: " << ba.what() << RESET << std::endl;
 		return (1);
 	}
 	zombie -> announce();

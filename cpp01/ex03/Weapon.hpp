@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 21:31:14 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/28 16:51:04 by wweerasi         ###   ########.fr       */
+/*   Created: 2025/08/28 20:10:21 by wweerasi          #+#    #+#             */
+/*   Updated: 2025/08/28 21:52:04 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-#define SET_RED		"\033[31m"
-#define RESET		"\033[0m"
+#include <string>
 
-#include "Zombie.hpp"
-
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+class Weapon
+{
+	private:
+		std::string  _type;
+	
+	public:
+		Weapon();
+		Weapon(std::string type);
+		~Weapon();
+	
+		const std::string&	getType();
+		void				setType(std::string& newtype);
+};
 
 #endif

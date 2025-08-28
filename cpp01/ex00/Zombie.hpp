@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 21:06:21 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/21 17:22:03 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/28 20:16:53 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Zombie
 		Zombie(std::string name);
 		~Zombie();
 	
-		void    announce( void );
+		void	announce( void );
 };
 
 #endif

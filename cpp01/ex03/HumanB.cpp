@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 21:31:14 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/28 16:51:04 by wweerasi         ###   ########.fr       */
+/*   Created: 2025/08/28 21:54:37 by wweerasi          #+#    #+#             */
+/*   Updated: 2025/08/28 22:22:09 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "HumanB.hpp"
 
-#define SET_RED		"\033[31m"
-#define RESET		"\033[0m"
+HumanB::HumanB(std::string name) {
+    _name = name;
+}
 
-#include "Zombie.hpp"
+HumanB::~HumanB() {}
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
-
-#endif
+void	HumanB::attack(std::string name, Weapon weapon) {
+    std::cout << _name << "attacks with their" << _weapon.getType() << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 21:13:37 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/27 21:29:27 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/08/28 16:37:13 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie::~Zombie() {
     std::cout << _name << " is destroyed." << std:: endl;
 }
 
-void	setName(std::string name) {
+void    Zombie::setName(std::string name) {
     _name = name;
 }
 
