@@ -1,0 +1,40 @@
+foo is the first word in this file.
+Every line might contain the word foo multiple times.
+Sometimes foo appears at the start, sometimes in the middle, and sometimes at the end foo.
+We want to replace every occurrence of foo with another word.
+foo foo foo foo foo!
+Even in a long paragraph, foo should be replaced properly.
+Lorem ipsum dolor sit amet, foo consectetur adipiscing elit.
+Vivamus foo lacinia foo velit foo nec foo sapien foo cursus foo.
+Curabitur foo foo sed foo urna foo foo foo foo foo foo foo.
+End of the file, but still foo remains somewhere.
+foo is the first word in this file.
+Every line might contain the word foo multiple times.
+Sometimes foo appears at the start, sometimes in the middle, and sometimes at the end foo.
+We want to replace every occurrence of foo with another word.
+foo foo foo foo foo!
+Even in a long paragraph, foo should be replaced properly.
+Lorem ipsum dolor sit amet, foo consectetur adipiscing elit.
+Vivamus foo lacinia foo velit foo nec foo sapien foo cursus foo.
+Curabitur foo foo sed foo urna foo foo foo foo foo foo foo.
+End of the file, but still foo remains somewhere.
+foo is the first word in this file.
+Every line might contain the word foo multiple times.
+Sometimes foo appears at the start, sometimes in the middle, and sometimes at the end foo.
+We want to replace every occurrence of foo with another word.
+foo foo foo foo foo!
+Even in a long paragraph, foo should be replaced properly.
+Lorem ipsum dolor sit amet, foo consectetur adipiscing elit.
+Vivamus foo lacinia foo velit foo nec foo sapien foo cursus foo.
+Curabitur foo foo sed foo urna foo foo foo foo foo foo foo.
+End of the file, but still foo remains somewhere.
+foo is the first word in this file.
+Every line might contain the word foo multiple times.
+Sometimes foo appears at the start, sometimes in the middle, and sometimes at the end foo.
+We want to replace every occurrence of foo with another word.
+foo foo foo foo foo!
+Even in a long paragraph, foo should be replaced properly.
+Lorem ipsum dolor sit amet, foo consectetur adipiscing elit.
+Vivamus foo lacinia foo velit foo nec foo sapien foo cursus foo.
+Curabitur foo foo sed foo urna foo foo foo foo foo foo foo.
+End of the file, but still foo remains somewhere.
