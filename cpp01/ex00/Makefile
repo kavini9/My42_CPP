@@ -6,7 +6,7 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 19:42:01 by wweerasi          #+#    #+#              #
-#    Updated: 2025/08/21 22:50:08 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/09/01 16:31:47 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ SRC = main.cpp \
 	newZombie.cpp \
 	randomChump.cpp
 	 
-
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

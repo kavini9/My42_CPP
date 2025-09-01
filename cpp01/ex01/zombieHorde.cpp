@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 21:39:44 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/28 17:00:43 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/01 16:35:53 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie*	zombieHorde( int N, std::string name )
 	horde = nullptr;
 	if (N < 1)
 	{
-		std::cerr << SET_RED "A horde needs at least one zombie. N must be >= 1" RESET << std::endl;
+		std::cout << SET_RED "A horde needs at least one zombie. N must be >= 1" RESET << std::endl;
 		return (nullptr);
 	}	
 	try
@@ -30,7 +30,7 @@ Zombie*	zombieHorde( int N, std::string name )
 	}
 	catch (std::bad_alloc& ba)
 	{
-		std::cerr << SET_RED "bad_alloc caught: " << ba.what() << RESET << std::endl;
+		std::cout << SET_RED "bad_alloc caught: " << ba.what() << RESET << std::endl;
 		return (nullptr);
 	}
 	return (horde);

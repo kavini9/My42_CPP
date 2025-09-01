@@ -3,7 +3,7 @@
 void searchReplace(std::ifstream& inFile, std::ofstream& outFile, std::string& search, std::string& replace)
 {
 	std::string	line;
-	while (std::getline(inFile, line))
+	while (std::getline(inFile, line))//change to add newline
 	{
 		size_t	pos = 0;
 		while ((pos = line.find(search, pos)) != std::string::npos)

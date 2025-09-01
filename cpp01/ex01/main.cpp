@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 21:02:57 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/08/28 16:55:27 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/01 16:38:03 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 	Zombie*     zombie;
 	int			nbZombie;
 	
-	nbZombie = 10;
+	nbZombie = 0;
 	zombie = zombieHorde(nbZombie, "Zed");
 	if (zombie)
 	{
@@ -25,6 +25,8 @@ int main()
 			zombie[i].announce();
 		delete[] zombie;
 	}
+	else
+		return (1);
 	return (0);
 }
 

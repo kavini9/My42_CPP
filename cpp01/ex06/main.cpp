@@ -6,7 +6,7 @@ int main (int argc, char **argv)
 	{
 		std::cout	<< SET_RED "Error: Invalid number of arguments.\n"
 					<< "Usage: ./harlFilter <level>\n"
-					<< "Levels: DEBUG, INFO, WARNING, ERROR" RESET
+					<< "Level options: DEBUG, INFO, WARNING, ERROR" RESET
 					<< std::endl;
 		return (1);
 	}
