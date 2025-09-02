@@ -3,8 +3,10 @@
 void searchReplace(std::ifstream& inFile, std::ofstream& outFile, std::string& search, std::string& replace)
 {
 	std::string	line;
-	while (std::getline(inFile, line))//change to add newline
+	while (std::getline(inFile, line))
 	{
+		if (!inFile.eof())
+			line += "\n";
 		size_t	pos = 0;
 		while ((pos = line.find(search, pos)) != std::string::npos)
 		{
@@ -12,7 +14,7 @@ void searchReplace(std::ifstream& inFile, std::ofstream& outFile, std::string& s
 			line.insert(pos, replace);
 			pos += replace.length();
 		}
-		outFile << line << std::endl;
+		outFile << line;
 	}
 }
 
@@ -37,12 +39,12 @@ int main(int argc, char **argv)
 		std::cout << SET_RED "Error: " << fname << ": Could not open file." << RESET << std::endl;
 		return 1;
 	}
-	// if (inFile.peek() == std::ifstream::traits_type::eof()) 
-	// {
-	// 	std::cout << SET_RED "Error: " << fname << ": Empty file." << RESET << std::endl;;
-	// 	inFile.close();
-	// 	return 1;
-	// }
+	if (inFile.peek() == std::ifstream::traits_type::eof()) 
+	{
+		std::cout << SET_RED "Error: " << fname << ": Empty file." << RESET << std::endl;;
+		inFile.close();
+		return 1;
+	}
 	std::ofstream outFile(fname + ".replace");
 	if (!outFile) {
 		std::cout << SET_RED "Error: " << fname + ".replace" << ": Could not create file."  << RESET << std::endl;

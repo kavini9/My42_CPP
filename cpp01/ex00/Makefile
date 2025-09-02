@@ -6,13 +6,13 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 19:42:01 by wweerasi          #+#    #+#              #
-#    Updated: 2025/09/01 16:31:47 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/09/02 21:58:51 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRC = main.cpp \
 	Zombie.cpp \
