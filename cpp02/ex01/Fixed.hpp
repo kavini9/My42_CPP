@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:46 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/07 20:11:18 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/07 23:37:24 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ class Fixed {
 		Fixed();
 		Fixed(const Fixed &other);
 		Fixed(const int value);
-		Fixed(const float fvalue);
+		Fixed(const float fValue);
 		Fixed &operator=(const Fixed &other);
 		~Fixed();
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
 
 #endif
