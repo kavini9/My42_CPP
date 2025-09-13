@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:58 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/07 19:44:18 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/13 23:22:18 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ Fixed::Fixed(const Fixed &other) {
 	_value = other.getRawBits();
 }
 
+Fixed::Fixed(const int value) {
+	std::cout << "Int constructor called" << std::endl;
+	_value = value << _fracBitWid;
+}
+
+Fixed::Fixed(const float value) {
+	std::cout << "Float constructor called" << std::endl;
+	_value = (int) roundf(value * (1 << _fracBitWid));
+}
+
 Fixed& Fixed::operator=(const Fixed &other) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -33,11 +43,22 @@ Fixed::~Fixed() {
 }
 
 int	Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return _value;
 }
 
 void	Fixed::setRawBits(int const raw) {
-	std::cout << "setRawBits member function called" << std::endl;
 	_value = raw;
+}
+
+float	Fixed::toFloat(void) const {
+	return ((float) _value / (float) (1 << _fracBitWid));
+}
+
+int	Fixed::toInt(void) const {
+	return (_value >> _fracBitWid);
+}
+
+std::ostream	&operator<<(std::ostream& os, const Fixed& fixed) {
+	os << fixed.toFloat();
+	return (os);
 }

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:46 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/07 23:37:24 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/13 23:18:37 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 
 	private:
 		int					_value;
-		static const int	_bitWid  = 8;
+		static const int	_fracBitWid  = 8;
 	
 	public:
 		Fixed();
@@ -34,5 +35,7 @@ class Fixed {
 		float	toFloat(void) const;
 		int		toInt(void) const;
 };
+
+std::ostream	&operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

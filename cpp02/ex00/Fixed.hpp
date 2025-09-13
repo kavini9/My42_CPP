@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:46 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/07 18:11:15 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/13 22:24:54 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed {
 
 	private:
 		int					_value;
-		static const int	_bitWid  = 8;
+		static const int	_fracBitWid  = 8;
 	
 	public:
 		Fixed();
