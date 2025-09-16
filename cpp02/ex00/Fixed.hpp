@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:46 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/13 22:24:54 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/16 21:11:30 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Fixed {
 	public:
 		Fixed();
 		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
+		
 		~Fixed();
 
 		int		getRawBits(void) const;
