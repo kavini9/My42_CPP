@@ -49,10 +49,10 @@ bool	Fixed::operator<=(const Fixed& other) const {return (_value <= other._value
 bool	Fixed::operator==(const Fixed& other) const {return (_value == other._value);}
 bool	Fixed::operator!=(const Fixed& other) const {return (_value != other._value);}
 
-Fixed	Fixed::operator+(const Fixed& other) const {return Fixed(_value + other._value);}
-Fixed	Fixed::operator-(const Fixed& other) const {return Fixed(_value - other._value);}
-Fixed	Fixed::operator*(const Fixed& other) const {return Fixed(_value * other._value);}
-Fixed	Fixed::operator/(const Fixed& other) const {return Fixed(_value / other._value);}
+Fixed	Fixed::operator+(const Fixed& other) const {return (Fixed(this -> toFloat() + other.toFloat()));}
+Fixed	Fixed::operator-(const Fixed& other) const {return (Fixed(this -> toFloat() - other.toFloat()));}
+Fixed	Fixed::operator*(const Fixed& other) const {return (Fixed(this -> toFloat() * other.toFloat()));}
+Fixed	Fixed::operator/(const Fixed& other) const {return (Fixed(this -> toFloat() / other.toFloat()));}
 		
 Fixed&	Fixed::operator++() {
 	++_value;
@@ -76,10 +76,10 @@ Fixed	Fixed::operator--(int) {
 	return (tmp);
 }
 
-Fixed&	Fixed::min(Fixed& fix1 ,Fixed& fix2) {return (fix1 < fix2) ? fix1 : fix2;}
-Fixed&	Fixed::max(Fixed& fix1 ,Fixed& fix2) {return (fix1 > fix2) ? fix1 : fix2;}
-const Fixed&	Fixed::min(const Fixed& fix1 ,const Fixed& fix2) {return (fix1 < fix2) ? fix1 : fix2;}
-const Fixed&	Fixed::max(const Fixed& fix1 ,const Fixed& fix2) {return (fix1 > fix2) ? fix1 : fix2;}
+Fixed&	Fixed::min(Fixed& fix1 ,Fixed& fix2) {return ((fix1 < fix2) ? fix1 : fix2);}
+Fixed&	Fixed::max(Fixed& fix1 ,Fixed& fix2) {return ((fix1 > fix2) ? fix1 : fix2);}
+const Fixed&	Fixed::min(const Fixed& fix1 ,const Fixed& fix2) {return ((fix1 < fix2) ? fix1 : fix2);}
+const Fixed&	Fixed::max(const Fixed& fix1 ,const Fixed& fix2) {return ((fix1 > fix2) ? fix1 : fix2);}
 
 int	Fixed::getRawBits(void) const {
 	return _value;
