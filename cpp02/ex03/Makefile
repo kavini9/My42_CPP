@@ -6,16 +6,18 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/05 21:44:46 by wweerasi          #+#    #+#              #
-#    Updated: 2025/09/05 21:45:29 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/09/19 21:13:26 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME = bsp
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRC = main.cpp \
 	Fixed.cpp \
+	Point.cpp \
+	bsp.cpp
 	 
 OBJ = $(SRC:.cpp=.o)
 

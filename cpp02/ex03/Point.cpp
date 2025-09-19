@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 19:01:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/17 21:25:43 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/19 20:29:56 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@ Point::Point(const float xValue, const float yValue)
 
 Point::Point(const Point& other) : _x(other._x) , _y(other._y) {}
 
-Point& Point::operator=(const Point& other) = delete;
-//see if this is allowed.
-
 Point::~Point() {}
 
-const Fixed& Point::getX(void) const {
+const Fixed& Point::x(void) const {
 	return (_x);
 }
 
-const Fixed& Point::getY(void) const {
+const Fixed& Point::y(void) const {
 	return (_y);
 }

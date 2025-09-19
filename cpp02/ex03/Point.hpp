@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 19:01:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/17 21:24:23 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/19 22:32:20 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class Point {
 		Point();
 		Point(const float xValue, const float yValue);
 		Point(const Point& other);
-		Point& operator=(const Point& other);
+		Point& operator=(const Point& other) = delete;
 		~Point();
 
-		const Fixed& getX(void) const;
-		const Fixed& getY(void) const;
+		const Fixed& x(void) const;
+		const Fixed& y(void) const;
 };
 
 #endif

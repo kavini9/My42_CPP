@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:58 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/17 20:39:30 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/19 22:54:34 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Fixed::Fixed() : _value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& other) {
+Fixed::Fixed(const Fixed &other) {
 	std::cout << "Copy constructor called" << std::endl;
 	_value = other.getRawBits();
 }
@@ -49,10 +49,10 @@ bool	Fixed::operator<=(const Fixed& other) const {return (_value <= other._value
 bool	Fixed::operator==(const Fixed& other) const {return (_value == other._value);}
 bool	Fixed::operator!=(const Fixed& other) const {return (_value != other._value);}
 
-Fixed	Fixed::operator+(const Fixed& other) const {return Fixed(_value + other._value);}
-Fixed	Fixed::operator-(const Fixed& other) const {return Fixed(_value - other._value);}
-Fixed	Fixed::operator*(const Fixed& other) const {return Fixed(_value * other._value);}
-Fixed	Fixed::operator/(const Fixed& other) const {return Fixed(_value / other._value);}
+Fixed	Fixed::operator+(const Fixed& other) const {return (Fixed(this -> toFloat() + other.toFloat()));}
+Fixed	Fixed::operator-(const Fixed& other) const {return (Fixed(this -> toFloat() - other.toFloat()));}
+Fixed	Fixed::operator*(const Fixed& other) const {return (Fixed(this -> toFloat() * other.toFloat()));}
+Fixed	Fixed::operator/(const Fixed& other) const {return (Fixed(this -> toFloat() / other.toFloat()));}
 		
 Fixed&	Fixed::operator++() {
 	++_value;
@@ -76,10 +76,10 @@ Fixed	Fixed::operator--(int) {
 	return (tmp);
 }
 
-Fixed&	Fixed::min(Fixed& fix1 ,Fixed& fix2) {return (fix1 < fix2) ? fix1 : fix2;}
-Fixed&	Fixed::max(Fixed& fix1 ,Fixed& fix2) {return (fix1 > fix2) ? fix1 : fix2;}
-const Fixed&	Fixed::min(const Fixed& fix1 ,const Fixed& fix2) {return (fix1 < fix2) ? fix1 : fix2;}
-const Fixed&	Fixed::max(const Fixed& fix1 ,const Fixed& fix2) {return (fix1 > fix2) ? fix1 : fix2;}
+Fixed&	Fixed::min(Fixed& fix1 ,Fixed& fix2) {return ((fix1 < fix2) ? fix1 : fix2);}
+Fixed&	Fixed::max(Fixed& fix1 ,Fixed& fix2) {return ((fix1 > fix2) ? fix1 : fix2);}
+const Fixed&	Fixed::min(const Fixed& fix1 ,const Fixed& fix2) {return ((fix1 < fix2) ? fix1 : fix2);}
+const Fixed&	Fixed::max(const Fixed& fix1 ,const Fixed& fix2) {return ((fix1 > fix2) ? fix1 : fix2);}
 
 int	Fixed::getRawBits(void) const {
 	return _value;
