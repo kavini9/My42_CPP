@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:23:05 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/30 21:23:15 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/01 22:14:01 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ClapTrap {
 		ClapTrap&   operator=(const ClapTrap& other);
 		~ClapTrap();
 		
-		void attack(const std::string& target);
+		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };

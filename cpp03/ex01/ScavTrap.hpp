@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:06:44 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/30 22:53:19 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/01 23:43:02 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ScavTrap : public ClapTrap {
 		ScavTrap&   operator=(const ScavTrap& other);
 		~ScavTrap();
 
-        void attack(const std::string& target);
+        void attack(const std::string& target) override;
         void guardGate();
 };
 
