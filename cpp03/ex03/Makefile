@@ -6,18 +6,19 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/26 18:21:04 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/02 18:36:20 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/10/02 21:52:39 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = diamondtrap
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 
 SRC = main.cpp \
 	ClapTrap.cpp \
 	ScavTrap.cpp \
-	FragTrap.cpp
+	FragTrap.cpp \
+	DiamondTrap.cpp
 	 
 OBJ = $(SRC:.cpp=.o)
 
