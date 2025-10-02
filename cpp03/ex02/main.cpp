@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 #define SET_B_YLW	"\033[1;33m"
 #define RESET		"\033[0m"
 
 int main() {
-	ScavTrap a("Alpha");
-	ScavTrap b("Beta");
+	FragTrap a("Alpha");
+	FragTrap b("Beta");
 
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Scene: Alpha attacks Beta." RESET  << std::endl;
@@ -32,12 +32,12 @@ int main() {
 	a.takeDamage(3);
 
 	std::cout << std::endl;
-	std::cout << SET_B_YLW "Scene: Beta goes to gate keper mode." RESET << std::endl;
-	b.guardGate();
+	std::cout << SET_B_YLW "Scene: Beta requests high five." RESET << std::endl;
+	b.highFivesGuys();
 
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Functionality of virtual functions." RESET << std::endl;
-	ScavTrap* c;
+	FragTrap* c;
 	ClapTrap* d;
 
 	c = &a;
@@ -48,7 +48,7 @@ int main() {
 
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Behaviour of destructors with new." RESET << std::endl;
-	ScavTrap* e = new ScavTrap("Eta");
+	FragTrap* e = new FragTrap("Eta");
 	delete e;
 	
 	std::cout << std::endl;

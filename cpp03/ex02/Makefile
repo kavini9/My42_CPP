@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scavtrap
+NAME = fragtrap
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 
 SRC = main.cpp \
 	ClapTrap.cpp \
-	ScavTrap.cpp 
+	ScavTrap.cpp \
+	FragTrap.cpp
 	 
 OBJ = $(SRC:.cpp=.o)
 
