@@ -12,18 +12,22 @@
 
 #include "FragTrap.hpp"
 
+unsigned int FragTrap::_statHitPoints = 100;
+unsigned int FragTrap::_statEnergyPoints = 100;
+unsigned int FragTrap::_statAttackDamage = 30;
+
 FragTrap::FragTrap() : ClapTrap() {
 	std::cout << "FragTrap: Default constructor called" << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	_hitPoints = _statHitPoints;
+	_energyPoints = _statEnergyPoints;
+	_attackDamage = _statAttackDamage;
 }
 
 FragTrap::FragTrap(std::string name) :  ClapTrap(name) {
 	std::cout << "FragTrap: Parameterized constructor called" << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	_hitPoints = _statHitPoints;
+	_energyPoints = _statEnergyPoints;
+	_attackDamage = _statAttackDamage;
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
@@ -48,3 +52,7 @@ FragTrap::~FragTrap() {
 void FragTrap::highFivesGuys(void) {
 	std::cout << "FragTrap " << _name << " throws a hand up for a high five!" << std::endl;
 }
+
+unsigned int FragTrap::getStatHitPoints() {return _statHitPoints;}
+unsigned int FragTrap::getStatEnergyPoints() {return _statEnergyPoints;}
+unsigned int FragTrap::getStatAttackDamage() {return _statAttackDamage;}

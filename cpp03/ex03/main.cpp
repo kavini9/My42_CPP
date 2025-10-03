@@ -20,15 +20,13 @@ int main() {
 	DiamondTrap a("Alpha");
 	DiamondTrap b("Beta");
 
-	std::cout << std::endl;
-
-	ScavTrap* scav;
 	FragTrap* frag;
+	ScavTrap* scav;
+	ClapTrap* clap;
 
-	scav = &a;
 	frag = &a;
-	// ScavTrap g("Gamma");
-	// FragTrap o("Omega");
+	scav = &a;
+	clap = &a;
 	
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Printing attribute values of DiamondTrap" RESET  << std::endl;
@@ -41,12 +39,27 @@ int main() {
 	std::cout << "hitPoints: " << scav -> getHitPoints() << std::endl;
 	std::cout << "energyPoints: " << scav -> getEnergyPoints() << std::endl;
 	std::cout << "attackDamage: " << scav -> getAttackDamage() << std::endl;
+	std::cout << "static_hitPoints: " << ScavTrap::getStatHitPoints() << std::endl;
+	std::cout << "static_energyPoints: " << ScavTrap::getStatEnergyPoints() << std::endl;
+	std::cout << "static_attackDamage: " << ScavTrap::getStatAttackDamage() << std::endl;
 
 	std::cout << std::endl;
-	std::cout << SET_B_YLW "Test: Printing attribute values of ScavTrap*" RESET  << std::endl;
+	std::cout << SET_B_YLW "Test: Printing attribute values of FragTrap*" RESET  << std::endl;
 	std::cout << "hitPoints: " << frag -> getHitPoints() << std::endl;
 	std::cout << "energyPoints: " << frag -> getEnergyPoints() << std::endl;
 	std::cout << "attackDamage: " << frag -> getAttackDamage() << std::endl;
+	std::cout << "static_hitPoints: " << FragTrap::getStatHitPoints() << std::endl;
+	std::cout << "static_energyPoints: " << FragTrap::getStatEnergyPoints() << std::endl;
+	std::cout << "static_attackDamage: " << FragTrap::getStatAttackDamage() << std::endl;
+
+	std::cout << std::endl;
+	std::cout << SET_B_YLW "Test: Printing attribute values of ClapTrap*" RESET  << std::endl;
+	std::cout << "hitPoints: " << clap -> getHitPoints() << std::endl;
+	std::cout << "energyPoints: " << clap -> getEnergyPoints() << std::endl;
+	std::cout << "attackDamage: " << clap -> getAttackDamage() << std::endl;
+	std::cout << "static_hitPoints: " << ClapTrap::getStatHitPoints() << std::endl;
+	std::cout << "static_energyPoints: " << ClapTrap::getStatEnergyPoints() << std::endl;
+	std::cout << "static_attackDamage: " << ClapTrap::getStatAttackDamage() << std::endl;
 	
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Scene: Alpha attacks Beta." RESET  << std::endl;
@@ -71,6 +84,7 @@ int main() {
 	std::cout << SET_B_YLW "Scene: Beta annouces who he is." RESET << std::endl;
 	b.whoAmI();
 	
+	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Functionality of virtual functions." RESET << std::endl;
 	DiamondTrap* c;
 	ClapTrap* d;

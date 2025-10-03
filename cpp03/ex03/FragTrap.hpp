@@ -19,6 +19,11 @@
 #include <iostream>
 
 class FragTrap : virtual public ClapTrap {
+	private:
+		static unsigned int	_statHitPoints;
+		static unsigned int	_statEnergyPoints;
+		static unsigned int	_statAttackDamage;
+
 	public:
 		FragTrap();
 		FragTrap(std::string name);
@@ -27,6 +32,10 @@ class FragTrap : virtual public ClapTrap {
 		~FragTrap();
 
 		void 	highFivesGuys(void);
+
+		static unsigned int	getStatHitPoints();
+		static unsigned int	getStatEnergyPoints();
+		static unsigned int	getStatAttackDamage();
 };
 
 #endif

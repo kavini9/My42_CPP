@@ -12,18 +12,22 @@
 
 #include "ScavTrap.hpp"
 
+unsigned int ScavTrap::_statHitPoints = 100;
+unsigned int ScavTrap::_statEnergyPoints = 50;
+unsigned int ScavTrap::_statAttackDamage = 20;
+
 ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout << "ScavTrap: Default constructor called" << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+	_hitPoints = _statHitPoints;
+	_energyPoints = _statEnergyPoints;
+	_attackDamage = _statAttackDamage;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap: Parameterized constructor called" << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+	_hitPoints = _statHitPoints;
+	_energyPoints = _statEnergyPoints;
+	_attackDamage = _statAttackDamage;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
@@ -57,3 +61,7 @@ void ScavTrap::attack(const std::string& target) {
 void ScavTrap::guardGate() {
 	std::cout << "ScavTrap " << _name << "  is now in Gate keeper mode" << std::endl;
 }
+
+unsigned int ScavTrap::getStatHitPoints() {return _statHitPoints;}
+unsigned int ScavTrap::getStatEnergyPoints() {return _statEnergyPoints;}
+unsigned int ScavTrap::getStatAttackDamage() {return _statAttackDamage;}

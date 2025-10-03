@@ -18,11 +18,16 @@
 #include <climits>
 
 class ClapTrap {
+	private:
+		static unsigned int	_statHitPoints;
+		static unsigned int	_statEnergyPoints;
+		static unsigned int	_statAttackDamage;
+
 	protected:
 		std::string _name;
-		unsigned int			_hitPoints;
-		unsigned int			_energyPoints;
-		unsigned int			_attackDamage;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
 	
 	public:
 		ClapTrap();
@@ -39,6 +44,10 @@ class ClapTrap {
 		unsigned int	getHitPoints() const;
 		unsigned int	getEnergyPoints() const;
 		unsigned int	getAttackDamage() const;
+	
+		static unsigned int	getStatHitPoints();
+		static unsigned int	getStatEnergyPoints();
+		static unsigned int	getStatAttackDamage();
 };
 
 #endif

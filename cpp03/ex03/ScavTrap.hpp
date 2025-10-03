@@ -18,6 +18,11 @@
 #include <iostream>
 
 class ScavTrap : virtual public ClapTrap {
+	private:
+		static unsigned int	_statHitPoints;
+		static unsigned int	_statEnergyPoints;
+		static unsigned int	_statAttackDamage;
+
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
@@ -27,6 +32,10 @@ class ScavTrap : virtual public ClapTrap {
 
 		void	attack(const std::string& target) override;
 		void	guardGate();
+
+		static unsigned int	getStatHitPoints();
+		static unsigned int	getStatEnergyPoints();
+		static unsigned int	getStatAttackDamage();
 };
 
 #endif
