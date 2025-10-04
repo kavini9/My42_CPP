@@ -6,7 +6,7 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 21:13:33 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/04 22:29:28 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/10/04 21:18:02 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,8 @@ SRC = main.cpp \
 	Animal.cpp \
 	Dog.cpp \
 	Cat.cpp \
-# 	WrongAnimal.cpp
-# 	WrongCat.cpp
-	Brain.cpp
+	WrongAnimal.cpp \
+	WrongCat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
