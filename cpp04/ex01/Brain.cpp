@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 22:38:09 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/04 23:15:51 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:11:12 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Brain::Brain() {
 	std::cout << "Brain: Default constructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = "idea_" + std::to_string(i + 1);
 }
 
 Brain::Brain(const Brain& other) {

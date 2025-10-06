@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:53:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/04 21:33:15 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:00:27 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal {
 		Cat();
 		Cat(const Cat& other);
 		Cat&   operator=(const Cat& other);
-		virtual ~Cat();
+		~Cat();
 		
 		void makeSound() const override;
 };

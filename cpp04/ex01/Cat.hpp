@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:53:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/04 23:02:40 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/06 22:13:31 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <string>
 #include <iostream>
 
 class Cat : public Animal {
 	private:
 		Brain* _brain;
+		
 	public:
 		Cat();
 		Cat(const Cat& other);
 		Cat&   operator=(const Cat& other);
-		virtual ~Cat();
+		~Cat();
 		
 		void makeSound() const override;
+
+		Brain* getBrain() const;
 };
 
 #endif

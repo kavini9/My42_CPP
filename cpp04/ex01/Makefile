@@ -6,7 +6,7 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 21:13:33 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/04 22:29:28 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/10/06 18:43:54 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,11 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 
 SRC = main.cpp \
+	Brain.cpp \
 	Animal.cpp \
 	Dog.cpp \
-	Cat.cpp \
-# 	WrongAnimal.cpp
-# 	WrongCat.cpp
-	Brain.cpp
+	Cat.cpp
+
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:53:28 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/04 21:33:04 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/06 22:21:52 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,33 @@
 
 Cat::Cat() {
 	std::cout << "Cat: Default constructor called" << std::endl;
-    _type = "Cat";
+	_type = "Cat";
+	//_brain = new Brain();
+	throw std::bad_alloc();
 }
 
 Cat::Cat(const Cat& other) : Animal(other) {
 	std::cout << "Cat: Copy constructor called" << std::endl;
+	_brain = new Brain(*other._brain);
 }
 
 Cat& Cat::operator=(const Cat& other) {
 	std::cout << "Cat: Copy assignment operator called" << std::endl;
-	if (this != &other)
+	if (this != &other) {
 		_type= other._type;
+		delete _brain;
+		_brain = new Brain(*other._brain);
+	}
 	return (*this); 
 }
 
 Cat::~Cat() {
 	std::cout << "Cat: Destructor called" << std::endl;
+	delete _brain;
 }
 
 void Cat::makeSound() const {
 	std::cout << "Meaw Meaw" << std::endl;
 }
+
+Brain* Cat::getBrain() const {return (_brain);}

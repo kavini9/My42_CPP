@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:14:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/04 21:53:23 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/06 22:55:07 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,36 +22,53 @@
 int main()
 {
 	{
-		std::cout << SET_B_YLW "Animal inheritance" RESET  << std::endl;
-		const Animal* meta = new(std::nothrow) Animal();
-		const Animal* i = new(std::nothrow) Dog();
-		const Animal* j = new(std::nothrow) Cat();
-		std::cout << std::endl;
-		std::cout << meta -> getType() << " " << std::endl;
-		std::cout << i -> getType() << " " << std::endl;
-		std::cout << j -> getType() << " " << std::endl;
-		meta->makeSound();
-		i->makeSound();
-		j->makeSound();
-		std::cout << std::endl;
-		if (meta != nullptr) {delete meta;}
-		if (i != nullptr) {delete i;}
-		if (j != nullptr) {delete j;}
+		const Animal* meta = nullptr;
+		const Animal* i = nullptr;
+		const Animal* j = nullptr;
+		try {
+			std::cout << SET_B_YLW "Animal inheritance" RESET  << std::endl;
+			meta = new Animal();
+			i = new Dog();
+			j = new Cat();
+			std::cout << std::endl;
+			std::cout << meta -> getType() << " " << std::endl;
+			std::cout << i -> getType() << " " << std::endl;
+			std::cout << j -> getType() << " " << std::endl;
+			meta->makeSound();
+			i->makeSound();
+			j->makeSound();
+			std::cout << std::endl;
+		}
+		catch (std::exception& e) {
+			std::cout << "Error: " << e.what() << std::endl;
+		}
+		delete meta;
+		delete i;
+		delete j;
 		std::cout << std::endl;
 	}
 	{
-		std::cout << SET_B_YLW "WrongAnimal inheritance" RESET  << std::endl;
-		const WrongAnimal* meta = new WrongAnimal();
-		const WrongAnimal* k = new WrongCat();
+		const WrongAnimal* meta = nullptr;
+		const WrongAnimal* k = nullptr;
+		try {
+			std::cout << SET_B_YLW "WrongAnimal inheritance" RESET  << std::endl;
+			meta = new WrongAnimal();
+			k = new WrongCat();
+			std::cout << std::endl;
+			std::cout << meta -> getType() << " " << std::endl;
+			std::cout << k -> getType() << " " << std::endl;
+			meta->makeSound();
+			k->makeSound();
+			std::cout << std::endl;			
+		}
+		catch (std::exception& e) {
+			std::cout << "Error: " << e.what() << std::endl;
+		}
+		delete meta;
+		delete k;
 		std::cout << std::endl;
-		std::cout << meta -> getType() << " " << std::endl;
-		std::cout << k -> getType() << " " << std::endl;
-		meta->makeSound();
-		k->makeSound();
-		std::cout << std::endl;
-		if (meta != nullptr) {delete meta;}
-		if (k != nullptr) {delete k;}
 	}
-	
 	return 0;
 }
+
+//throw std::bad_alloc();
