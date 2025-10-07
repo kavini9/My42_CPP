@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:14:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/07 21:32:13 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/07 23:04:54 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,43 @@ int main()
 		std::cout << std::endl;
 	}
 	{
+		std::cout << SET_B_YLW "Destructor Chain Validation" RESET  << std::endl;
+		const Dog i;
+		const Cat j;
+		//const Dog* iptr = &i;
+
+		const Animal& i_= i;
+		i_.makeSound();
+		i_.Animal::makeSound();
+		std::cout << std::endl;
+	}
+	// {
+	// 	std::cout << SET_B_YLW "Animal Inheritance" RESET  << std::endl;
+	// 	const Animal* meta = nullptr;
+	// 	const Animal* i = nullptr;
+	// 	const Animal* j = nullptr;
+	// 	try {
+	// 		meta = new Animal();
+	// 		i = new Dog();
+	// 		j = new Cat();
+	// 		std::cout << std::endl;
+	// 		std::cout << meta -> getType() << " " << std::endl;
+	// 		std::cout << i -> getType() << " " << std::endl;
+	// 		std::cout << j -> getType() << " " << std::endl;
+	// 		meta->makeSound();
+	// 		i->makeSound();
+	// 		j->makeSound();
+	// 		std::cout << std::endl;
+	// 	}
+	// 	catch (std::exception& e) {
+	// 		std::cout << "Error: " << e.what() << std::endl;
+	// 	}
+	// 	delete meta;
+	// 	delete i;
+	// 	delete j;
+	// 	std::cout << std::endl;
+	// }
+	{
 		std::cout << SET_B_YLW "Runtime Polymorphism" RESET  << std::endl;
 		Animal*	animals[ELE_COUNT] = {nullptr};
 		try {
@@ -57,67 +94,6 @@ int main()
 		for (int i = 0; i < ELE_COUNT; i++)
 			delete animals[i];
 		std::cout << std::endl;
-	}
-	{
-		std::cout << SET_B_YLW "Deep Copy Validation : Cat Copy Constructor" RESET  << std::endl;
-		try {
-			Cat catA;
-			Cat catB(catA);
-			std::cout << std::endl;
-			std::cout << "Cat A brain pointer: " << catA.getBrain() << std::endl;
-			std::cout << "Cat B brain pointer: " << catB.getBrain() << std::endl;
-			std::cout << std::endl;
-		}
-		catch (std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;			
-		}
-	}
-	{
-		std::cout << std::endl;
-		std::cout << SET_B_YLW "Deep Copy Validation : Dog Copy Constructor" RESET  << std::endl;
-		try {
-			Dog dogA;
-			Dog dogB(dogA);
-			std::cout << std::endl;
-			std::cout << "Dog A brain pointer: " << dogA.getBrain() << std::endl;
-			std::cout << "Dog B brain pointer: " << dogB.getBrain() << std::endl;
-			std::cout << std::endl;		
-		}
-		catch (std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;			
-		}
-	}
-	{
-		std::cout << std::endl;
-		std::cout << SET_B_YLW "Deep Copy Validation : Cat Copy Assignment Operator" RESET  << std::endl;
-		try {
-			Cat catA;
-			Cat catB;
-			catB = catA;
-			std::cout << std::endl;
-			std::cout << "Cat A brain pointer: " << catA.getBrain() << std::endl;
-			std::cout << "Cat B brain pointer: " << catB.getBrain() << std::endl;
-			std::cout << std::endl;	
-		}
-		catch (std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;			
-		}
-	}
-	{
-		std::cout << std::endl;
-		std::cout << SET_B_YLW "Deep Copy Validation : Dog Copy Assignment Operator" RESET  << std::endl;
-		try {
-			Dog dogA;
-			Dog dogB;
-			dogB = dogA;
-			std::cout << std::endl;
-			std::cout << "Dog A brain pointer: " << dogA.getBrain() << std::endl;
-			std::cout << "Dog B brain pointer: " << dogB.getBrain() << std::endl;
-			std::cout << std::endl;	
-		}
-		catch (std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;			
-		}
 	}
 	std::cout << std::endl;
 	return 0;

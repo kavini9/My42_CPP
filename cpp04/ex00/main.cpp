@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:14:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/06 22:55:07 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/07 19:18:50 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 		const Animal* i = nullptr;
 		const Animal* j = nullptr;
 		try {
-			std::cout << SET_B_YLW "Animal inheritance" RESET  << std::endl;
+			std::cout << SET_B_YLW "Animal Inheritance" RESET  << std::endl;
 			meta = new Animal();
 			i = new Dog();
 			j = new Cat();
@@ -51,7 +51,7 @@ int main()
 		const WrongAnimal* meta = nullptr;
 		const WrongAnimal* k = nullptr;
 		try {
-			std::cout << SET_B_YLW "WrongAnimal inheritance" RESET  << std::endl;
+			std::cout << SET_B_YLW "WrongAnimal Inheritance" RESET  << std::endl;
 			meta = new WrongAnimal();
 			k = new WrongCat();
 			std::cout << std::endl;
