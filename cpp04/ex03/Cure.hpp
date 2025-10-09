@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 19:40:36 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/08 22:25:13 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/09 22:37:56 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cure : public AMateria {
 		Cure&    operator=(const Cure& other);
 		~Cure();
 
-		AMateria* clone() const;
+		AMateria* clone() const override;
 		void use(ICharacter& target) override;
 };
 

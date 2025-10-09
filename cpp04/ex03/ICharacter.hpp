@@ -6,15 +6,16 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 19:30:03 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/08 19:34:30 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/09 22:33:50 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include "AMateria.hpp"
 #include <string>
+
+class AMateria;
 
 class ICharacter
 {

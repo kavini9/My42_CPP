@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 19:40:27 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/08 23:02:55 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/09 20:14:10 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 class Character : public ICharacter {
 	private:
@@ -27,7 +29,7 @@ class Character : public ICharacter {
 		Character&	operator=(const Character& other);
 		~Character();
 		
-		std::string const & getName() const;
+		const std::string& getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);

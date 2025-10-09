@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:53:41 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/08 21:31:51 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/09 22:39:34 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AMateria::AMateria(const std::string& type) : _type(type) {}
 
 AMateria::AMateria(const AMateria& other) : _type(other._type) {}
 
-AMateria&  AMateria::operator=(const AMateria& other) {return (*this);}
+AMateria&  AMateria::operator=(const AMateria&) {return (*this);}
 
 AMateria::~AMateria() {}
 
