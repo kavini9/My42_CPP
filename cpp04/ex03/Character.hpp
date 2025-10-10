@@ -13,6 +13,7 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+#include "Debug.hpp"
 #include "ICharacter.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"

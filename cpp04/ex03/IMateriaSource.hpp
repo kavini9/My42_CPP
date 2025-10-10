@@ -13,6 +13,7 @@
 #ifndef IMATERIASOURCE_HPP
 #define IMATERIASOURCE_HPP
 
+#include "Debug.hpp"
 #include "AMateria.hpp"
 #include <string>
 

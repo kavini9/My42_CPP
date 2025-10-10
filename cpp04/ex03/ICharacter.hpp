@@ -13,6 +13,7 @@
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
+#include "Debug.hpp"
 #include <string>
 
 class AMateria;

@@ -12,21 +12,24 @@
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("ice") {}
+Ice::Ice() : AMateria("ice") {DBG("Ice: Default constructor called");}
 
-Ice::Ice(const Ice& other) : AMateria(other) {}
+Ice::Ice(const Ice& other) : AMateria(other) {DBG("Ice: Copy constructor called");}
 
 Ice&	Ice::operator=(const Ice& other) {
+	DBG("Ice: Copy assignment operator called");
 	AMateria::operator=(other);
 	return (*this);
 }
 
-Ice::~Ice() {}
+Ice::~Ice() {DBG("Ice: Destructor called");}
 
 AMateria* Ice::clone() const {
+	DBG("Ice: clone called");
 	return (new Ice());
 }
 
-void Ice::use(ICharacter& target)  {
+void Ice::use(ICharacter& target) {
+	DBG("Ice: use called");
 	std::cout <<  "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

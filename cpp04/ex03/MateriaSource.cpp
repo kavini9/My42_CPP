@@ -12,17 +12,21 @@
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() {}
+MateriaSource::MateriaSource() {DBG("MateriaSource: Default constructor called");}
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
-    	for (int i = 0; i < 4; i++)
+	DBG("MateriaSource: Copy constructor called");
+    for (int i = 0; i < 4; i++)
 	{
 		if (_template[i])
 			_template[i] = other._template[i] -> clone();
+		else 
+			_template[i] = nullptr;
 	}
 }
 
 MateriaSource&	MateriaSource::operator=(const MateriaSource& other) {
+	DBG("MateriaSource: Copy assignment operator called");
 	if (this != &other) {
 		for (int i = 0; i < 4; i++)
 		{
@@ -36,19 +40,26 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& other) {
 }
 
 MateriaSource::~MateriaSource() {
+	DBG("MateriaSource: Destructor called");
 	for (int i = 0; i < 4; i++)
 		delete _template[i];
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
+	DBG("MateriaSource: learnMateria called");
     if (!m) {return;}
 	for (int i = 0; i < 4; i++) {
         if (!_template[i])
+		{
             _template[i] = m -> clone();
+			break;
+		}
     }
+	delete m;//TODO: see if this is reasonable to add here
 }
 
 AMateria* MateriaSource::createMateria(const std::string& type) {
+	DBG("MateriaSource: createMateria called");
 	for (int i = 0; i < 4; i++) {
 		if (_template[i] && _template[i] -> getType() == type)
 			return _template[i] -> clone();

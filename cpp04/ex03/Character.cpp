@@ -12,11 +12,12 @@
 
 #include "Character.hpp"
 
-Character::Character() {}
+Character::Character() {DBG("Character: Default constructor called");}
 
-Character::Character(std::string name) : _name(name) {}
+Character::Character(std::string name) : _name(name) {DBG("Character: Parameterized constructor called");}
 
 Character::Character(const Character& other) : _name(other._name) {
+	DBG("Character: Copy constructor called");
 	for (int i = 0; i < 4; i++)
 	{
 		if (_slot[i])
@@ -25,6 +26,7 @@ Character::Character(const Character& other) : _name(other._name) {
 }
 
 Character&	Character::operator=(const Character& other) {
+	DBG("Character: Copy assignment operator called");
 	if (this != &other) {
 		_name= other._name;
 		for (int i = 0; i < 4; i++)
@@ -39,26 +41,36 @@ Character&	Character::operator=(const Character& other) {
 }
 
 Character::~Character() {
+	DBG("Character: Destructor called");
 	for (int i = 0; i < 4; i++)
 		delete _slot[i];
 }
 
-const std::string& Character::getName() const {return (_name);}
+const std::string& Character::getName() const {
+	DBG("Character: getName called");
+	return (_name);
+}
 
 void Character::equip(AMateria* m) {
+	DBG("Character: equip called");
 	for (int i = 0; i < 4; i++)
 	{
 		if (!_slot[i])
+		{
 			_slot[i] = m;
+			break;
+		}
 	}
 }
 
 void Character::unequip(int idx) {
+	DBG("Character: unequip called");
 	if (idx >= 0 && idx < 4)
 		_slot[idx] = nullptr;
 }
 
 void Character::use(int idx, ICharacter& target) {
+	DBG("Character: use called");
 	if (idx >= 0 && idx < 4 && _slot[idx])
 		_slot[idx] -> use(target);	
 }

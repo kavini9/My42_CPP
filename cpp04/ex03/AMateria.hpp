@@ -13,6 +13,7 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
+#include "Debug.hpp"
 #include "ICharacter.hpp"
 #include <string>
 

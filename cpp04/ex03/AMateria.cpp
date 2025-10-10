@@ -12,16 +12,24 @@
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() {}
+AMateria::AMateria() {DBG("AMateria: Default constructor called");}
 
-AMateria::AMateria(const std::string& type) : _type(type) {}
+AMateria::AMateria(const std::string& type) : _type(type) {DBG("AMateria: Parameterized constructor called");}
 
-AMateria::AMateria(const AMateria& other) : _type(other._type) {}
+AMateria::AMateria(const AMateria& other) : _type(other._type) {DBG("AMateria: Copy constructor called");}
 
-AMateria&  AMateria::operator=(const AMateria&) {return (*this);}
+AMateria&  AMateria::operator=(const AMateria&) {
+    DBG("AMateria: Copy assignment operator called");
+    return (*this);
+}
 
-AMateria::~AMateria() {}
+AMateria::~AMateria() {DBG("AMateria: Destructor called");}
 
-const std::string& AMateria::getType() const {return (_type);}
+const std::string& AMateria::getType() const {
+    DBG("AMateria: getType called");
+    return (_type);}
 
-void AMateria::use(ICharacter& target) {(void) target;}
+void AMateria::use(ICharacter& target) {
+    DBG("AMateria: use called");
+    (void) target;
+}

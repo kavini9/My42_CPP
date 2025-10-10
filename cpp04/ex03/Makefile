@@ -36,4 +36,7 @@ fclean: clean
 
 re: fclean all
 
+debug: CXXFLAGS += -DDEBUG -g
+debug: re
+
 .PHONY: all clean fclean re

@@ -12,21 +12,24 @@
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure") {}
+Cure::Cure() : AMateria("cure") {DBG("Cure: Default constructor called");}
 
-Cure::Cure(const Cure& other) : AMateria(other) {}
+Cure::Cure(const Cure& other) : AMateria(other) {DBG("Cure: Copy constructor called");}
 
 Cure&	Cure::operator=(const Cure& other) {
+	DBG("Cure: Copy assignment operator called");
 	AMateria::operator=(other);
 	return (*this);
 }
 
-Cure::~Cure() {}
+Cure::~Cure() {DBG("Cure: Destructor called");}
 
 AMateria* Cure::clone() const {
+	DBG("Cure: Clone called");
 	return (new Cure());
 }
 
-void Cure::use(ICharacter& target)  {
+void Cure::use(ICharacter& target) {
+	DBG("Cure: Use called");
 	std::cout <<  "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
