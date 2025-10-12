@@ -6,30 +6,30 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:53:41 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/09 22:39:34 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/12 23:35:56 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() {DBG("AMateria: Default constructor called");}
+AMateria::AMateria() {LOG("AMateria: Default constructor called");}
 
-AMateria::AMateria(const std::string& type) : _type(type) {DBG("AMateria: Parameterized constructor called");}
+AMateria::AMateria(const std::string& type) : _type(type) {LOG("AMateria: Parameterized constructor called");}
 
-AMateria::AMateria(const AMateria& other) : _type(other._type) {DBG("AMateria: Copy constructor called");}
+AMateria::AMateria(const AMateria& other) : _type(other._type) {LOG("AMateria: Copy constructor called");}
 
 AMateria&  AMateria::operator=(const AMateria&) {
-    DBG("AMateria: Copy assignment operator called");
+    LOG("AMateria: Copy assignment operator called");
     return (*this);
 }
 
-AMateria::~AMateria() {DBG("AMateria: Destructor called");}
+AMateria::~AMateria() {LOG("AMateria: Destructor called");}
 
 const std::string& AMateria::getType() const {
-    DBG("AMateria: getType called");
+    LOG("AMateria: getType called");
     return (_type);}
 
 void AMateria::use(ICharacter& target) {
-    DBG("AMateria: use called");
+    LOG("AMateria: use called");
     (void) target;
 }

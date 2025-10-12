@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 19:40:54 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/09 22:19:46 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:17:38 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class MateriaSource : public IMateriaSource {
     private:
-        AMateria* _template[4] = {nullptr};
+        AMateria* _bluePrints[4] = {nullptr};
         
 	public:
         MateriaSource();
