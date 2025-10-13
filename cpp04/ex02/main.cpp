@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 21:14:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/08 18:50:07 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/13 21:46:55 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int main()
 {
 	// {
-	// 	Animal a;
+	// 	Animal a; // Attempting to instantiate an abstract class (will not compile)
 	// }
 	{
 		std::cout << SET_B_YLW "Destructor Chain Validation" RESET  << std::endl;
@@ -40,17 +40,17 @@ int main()
 		std::cout << std::endl;
 	}
 	{
-		std::cout << SET_B_YLW "Destructor Chain Validation" RESET  << std::endl;
+		std::cout << SET_B_YLW "Dynamic Dispatch of a Pure Virtual Function" RESET  << std::endl;
 		const Dog i;
 		const Cat j;
 		std::cout << std::endl;
 		const Animal& i_= i;
 		const Animal& j_= j;
 		i_.makeSound();
-		// i_.Animal::makeSound();
+		// i_.Animal::makeSound(); //works when abstract base class has definition for the pure virtual function
 		j_.makeSound();
-		// j_.Animal::makeSound();
-		std::cout << std::endl;
+		// j_.Animal::makeSound(); //works when abstract base class has definition for the pure virtual function
+		std::cout << std::endl; 
 	}
 	std::cout << std::endl;
 }
