@@ -24,7 +24,7 @@ int main()
 	// 	Animal a; // Attempting to instantiate an abstract class (will not compile)
 	// }
 	{
-		std::cout << SET_B_YLW "Destructor Chain Validation" RESET  << std::endl;
+		std::cout << SET_B_YLW "Runtime Polymorphism Validation with Base Class Pointer" RESET  << std::endl;
 		const Animal* i = nullptr;
 		const Animal* j = nullptr;
 		try {
@@ -40,16 +40,21 @@ int main()
 		std::cout << std::endl;
 	}
 	{
-		std::cout << SET_B_YLW "Dynamic Dispatch of a Pure Virtual Function" RESET  << std::endl;
-		const Dog i;
-		const Cat j;
-		std::cout << std::endl;
-		const Animal& i_= i;
-		const Animal& j_= j;
-		i_.makeSound();
-		// i_.Animal::makeSound(); //works when abstract base class has definition for the pure virtual function
-		j_.makeSound();
-		// j_.Animal::makeSound(); //works when abstract base class has definition for the pure virtual function
+		std::cout << SET_B_YLW "Runtime Polymorphism Validation with Base Class Reference" RESET  << std::endl;
+		try {
+			const Dog i;
+			const Cat j;
+			std::cout << std::endl;
+			const Animal& i_= i;
+			const Animal& j_= j;
+			i_.makeSound();
+			// i_.Animal::makeSound(); //works when abstract base class has definition for the pure virtual function
+			j_.makeSound();
+			// j_.Animal::makeSound(); //works when abstract base class has definition for the pure virtual function
+		}
+		catch (std::exception& e) {
+			std::cout << "Error: " << e.what() << std::endl;
+		}
 		std::cout << std::endl; 
 	}
 	std::cout << std::endl;
