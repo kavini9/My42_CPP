@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:40 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/27 19:08:14 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/28 21:47:37 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Bureaucrat {
 		Bureaucrat();
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& other);
-		Bureaucrat& operator=(const Bureaucrat& other);
+		Bureaucrat& operator=(const Bureaucrat& other) = delete;//should thiss be deleted because it's a class type.
 		~Bureaucrat();
 
 		const std::string& getName() const;
