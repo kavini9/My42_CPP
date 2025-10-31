@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:17:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/27 21:42:42 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/31 20:57:44 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <iostream>
 
+class Bureaucrat;
+
 class Form {
 	private:
 		const std::string	_name;
@@ -25,10 +27,10 @@ class Form {
 		const int	_gradeToExecute;
 
 	public:
-		Form();
+		Form() = delete;
 		Form(const std::string& name, int gradeToSign, int gradeToExecute);
 		Form(const Form& other);
-		Form& operator=(const Form& other);
+		Form& operator=(const Form& other) = delete;
 		~Form();
 
 		const std::string& getName() const;
@@ -43,6 +45,10 @@ class Form {
 				virtual const char* what() const noexcept override;
 		};
 		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const noexcept override;
+		};
+		class AlreadySignedException : public std::exception {
 			public:
 				virtual const char* what() const noexcept override;
 		};

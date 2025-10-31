@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Bureaucrat.hpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:40 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/20 20:36:19 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/31 21:08:06 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Bureaucrat {
 		int                 _grade;
 	
 	public:
-		Bureaucrat();
+		Bureaucrat() = delete;
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& other);
-		Bureaucrat& operator=(const Bureaucrat& other);
+		Bureaucrat& operator=(const Bureaucrat& other) = delete;
 		~Bureaucrat();
 
 		const std::string& getName() const;

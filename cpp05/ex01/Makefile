@@ -6,7 +6,7 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 22:17:10 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/27 19:01:39 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/10/31 19:37:01 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 
 SRC = main.cpp \
-	Bureaucrat.cpp 
+	Bureaucrat.cpp \
+	Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
