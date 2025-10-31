@@ -61,6 +61,6 @@ std::ostream	&operator<<(std::ostream& os, const Form& form) {
 	os << "Form, "<< form.getName() 
 	<< " [grade_to_sign: " << form.getGradeToSign() 
 	<< ", grade_to_execute: " << form.getGradeToExecute()
-	<< ", sign status: " << form.getSignStatus() << "]";
+	<< ", sign_status: " << form.getSignStatus() << "]";
 	return (os);
 }
