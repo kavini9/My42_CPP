@@ -6,15 +6,11 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:36 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/31 18:21:06 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/01 19:25:46 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-// Bureaucrat::Bureaucrat() : _grade(150) {
-// 	std::cout << "Default constructor called" << std::endl;
-// }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name) {
 	std::cout << "Parameterized constructor called" << std::endl;
@@ -28,13 +24,6 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name) {
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) {
 	std::cout << "Copy constructor called" << std::endl;
 }
-
-// Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& other) {
-// 	std::cout << "Copy assignment operator called" << std::endl;
-// 	if (this != &other)
-// 		_grade = other._grade;
-// 	return (*this);
-// }
 
 Bureaucrat::~Bureaucrat() {
 	std::cout << "Destructor called" << std::endl;
@@ -55,11 +44,11 @@ void	Bureaucrat::decrementGrade() {
 	_grade++;
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw(){
+const char* Bureaucrat::GradeTooHighException::what() const noexcept {
 	return "Bureaucrat::grade_too_high";
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw(){
+const char* Bureaucrat::GradeTooLowException::what() const noexcept {
 	return "Bureaucrat::grade_too_low";
 }
 

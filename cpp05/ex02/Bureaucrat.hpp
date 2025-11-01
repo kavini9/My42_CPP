@@ -6,15 +6,21 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:40 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 16:20:10 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:19:55 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#define SET_RED		"\033[31m"
+#define RESET		"\033[0m"
+
+#include "AForm.hpp"
 #include <string>
 #include <iostream>
+
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -29,10 +35,12 @@ class Bureaucrat {
 		~Bureaucrat();
 
 		const std::string& getName() const;
-		int			getGrade() const;
+		int		getGrade() const;
 
-		void		incrementGrade();
-		void		decrementGrade();
+		void	incrementGrade();
+		void	decrementGrade();
+		void	signForm(AForm& form);
+		void	executeForm(const AForm& form);
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const noexcept override;

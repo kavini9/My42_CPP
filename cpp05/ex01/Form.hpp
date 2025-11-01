@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:17:01 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/31 20:57:44 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:20:32 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ class Form {
 		
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual const char* what() const noexcept override;
+				const char* what() const noexcept override;
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char* what() const noexcept override;
+				const char* what() const noexcept override;
 		};
 		class AlreadySignedException : public std::exception {
 			public:
-				virtual const char* what() const noexcept override;
+				const char* what() const noexcept override;
 		};
 };
 

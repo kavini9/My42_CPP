@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:40 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/31 20:58:19 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:20:20 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ class Bureaucrat {
 		void	signForm(Form& form);
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual const char* what() const noexcept override;
+				const char* what() const noexcept override;
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char* what() const noexcept override;
+				const char* what() const noexcept override;
 		};
 };
 

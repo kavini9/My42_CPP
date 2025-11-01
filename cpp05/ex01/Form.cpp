@@ -6,15 +6,11 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:53 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/31 21:04:13 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:21:05 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-
-// Form::Form() : _signStatus(false), _gradeToSign(1), _gradeToExecute(1) {
-//     std::cout << "Form: Default constructor called" << std::endl;
-// }
 
 Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name(name), _signStatus(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
 	std::cout << "Form: Parameterized constructor called" << std::endl;

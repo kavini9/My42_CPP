@@ -6,7 +6,34 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 22:26:39 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/18 22:26:40 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/11/01 22:18:38 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = bureaucrat
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++20
+
+SRC = main.cpp \
+	Bureaucrat.cpp \
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp
+
+OBJ = $(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
