@@ -6,18 +6,16 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:26:43 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 21:59:07 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/03 23:42:39 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-const char* drilling_noise= R"(
-*VRRRRRRRRRRRRRRRRRR....
+const char* drilling_noise= R"(*VRRRRRRRRRRRRRRRRRR....
 .....BRRRRRRRRRTTTTTT!
 ........VRRRT-VRRRRT-VRRRRT...
-tch! tch! whirrrrrrrr......*
-)";
+tch! tch! whirrrrrrrr......*)";
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45) , _target(target) {
 	std::cout << "RobotomyRequestForm: Parameterized constructor called" << std::endl;
@@ -34,7 +32,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 const std::string& RobotomyRequestForm::getTarget() const {return (_target);}
 
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
-	checkExecutability(executor);//I hpe in this function "this" works fine.
+	checkExecutability(executor);
 	std::cout << drilling_noise << std::endl;
 	std::srand(time(NULL));
 	if (rand()%100 %2 == 0)
