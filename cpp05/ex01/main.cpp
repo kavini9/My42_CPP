@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:17:05 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/31 21:12:56 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:37:56 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,11 @@ int main()
 		std::cout << SET_B_YLW "Form gets signed succesfully" RESET  << std::endl;
 		try {
 			Form f("ITSupportRequestForm", 100, 50);
-			Bureaucrat b("Clara", 125);
+			Bureaucrat b("Clara", 75);
 			std::cout << "f: " << f << std::endl;
 			std::cout << "b: " << b << std::endl;
-			f.beSigned(b);
+			b.signForm(f);
+			//f.beSigned(b);
 			std::cout << "f: " << f << std::endl;
 		}
 		catch (std::exception& e) {
@@ -108,10 +109,11 @@ int main()
 		std::cout << SET_B_YLW "Form fails to get signed" RESET  << std::endl;
 		try {
 			Form f("MaintenanceRequestForm", 100, 50);
-			Bureaucrat b("Harl", 75);
+			Bureaucrat b("Harl", 125);
 			std::cout << "f: " << f << std::endl;
 			std::cout << "b: " << b << std::endl;
-			f.beSigned(b);
+			b.signForm(f);
+			// f.beSigned(b);
 			std::cout << "f: " << f << std::endl;
 		}
 		catch (std::exception& e) {
@@ -123,14 +125,16 @@ int main()
 		std::cout << SET_B_YLW "Form is already signed" RESET  << std::endl;
 		try {
 			Form f("TemporaryWorkaroundApprovalForm", 100, 50);
-			Bureaucrat b1("Deborah", 120);
-			Bureaucrat b2("Derek", 110);
+			Bureaucrat b1("Deborah", 90);
+			Bureaucrat b2("Derek", 80);
 			std::cout << "f: " << f << std::endl;
 			std::cout << "b1: " << b1 << std::endl;
-			f.beSigned(b1);
+			b1.signForm(f);
+			// f.beSigned(b1);
 			std::cout << "f: " << f << std::endl;
 			std::cout << "b2: " << b2 << std::endl;
-			f.beSigned(b2);
+			b2.signForm(f);
+			// f.beSigned(b2);
 			
 		}
 		catch (std::exception& e) {

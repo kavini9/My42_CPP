@@ -6,12 +6,15 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:40 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 16:20:20 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:36:23 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+
+#define SET_RED		"\033[31m"
+#define RESET		"\033[0m"
 
 #include "Form.hpp"
 #include <string>

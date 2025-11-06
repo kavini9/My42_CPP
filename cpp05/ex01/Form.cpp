@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:53 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 16:21:05 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:56:37 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	Form::getGradeToSign() const {return (_gradeToSign);}
 int Form::getGradeToExecute() const {return (_gradeToExecute);}
 
 void Form::beSigned(const Bureaucrat& bureau) {
-	if (_gradeToSign > bureau.getGrade())
+	if (bureau.getGrade() > _gradeToSign)
 		throw GradeTooLowException();
 	else if (_signStatus == true)
 		throw AlreadySignedException();

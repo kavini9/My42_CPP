@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:36 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 16:20:57 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:35:37 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	Bureaucrat::signForm(Form& form) {
 		std::cout << *this << " signed " << form << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cout << *this << " couldn't sign " << form << " because " << e.what() << std::endl;
+		std::cout << SET_RED << *this << " couldn't sign " << form << " because " << e.what() << RESET << std::endl;
 	}
 }
 
