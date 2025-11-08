@@ -13,7 +13,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-#define SET_B_YLW	"\033[1;33m"
+#define SET_B_BLK	"\033[1;30m"
 #define SET_YLW		"\033[33m"
 #define SET_RED		"\033[31m"
 #define RESET		"\033[0m"
@@ -22,7 +22,7 @@ int main()
 {
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Successfull Prameterized Constructor Instantiation" RESET  << std::endl;
+		std::cout << SET_B_BLK "Successfull Prameterized Constructor Instantiation" RESET  << std::endl;
 		try {
 			Form f("VacationRequestForm", 125, 100);
 			std::cout << "f: " << f << std::endl;
@@ -33,7 +33,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Grade to sign triggers GradeTooHigh Exception" RESET  << std::endl;
+		std::cout << SET_B_BLK "Grade to sign triggers GradeTooHigh Exception" RESET  << std::endl;
 		try {
 			Form f("CoffeeApprovalForm", 0, 100);
 			std::cout << "f: " << f << std::endl;
@@ -44,7 +44,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Grade to sign triggers GradeTooLow Exception" RESET  << std::endl;
+		std::cout << SET_B_BLK "Grade to sign triggers GradeTooLow Exception" RESET  << std::endl;
 		try {
 			Form f("ExpenseClaimForm", 200, 100);
 			std::cout << "f: " << f << std::endl;
@@ -55,7 +55,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Grade to execute triggers GradeTooHigh Exception" RESET  << std::endl;
+		std::cout << SET_B_BLK "Grade to execute triggers GradeTooHigh Exception" RESET  << std::endl;
 		try {
 			Form f("ElevatorAccessRequestForm", 125, -1);
 			std::cout << "f: " << f << std::endl;
@@ -66,7 +66,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Grade to execute triggers GradeTooLow Exception" RESET  << std::endl;
+		std::cout << SET_B_BLK "Grade to execute triggers GradeTooLow Exception" RESET  << std::endl;
 		try {
 			Form f("ExtensionRequestForm", 125, 151);
 			std::cout << "f: " << f << std::endl;
@@ -77,7 +77,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Copy Constructor Instantiation" RESET  << std::endl;
+		std::cout << SET_B_BLK "Copy Constructor Instantiation" RESET  << std::endl;
 		try {
 			Form f1("LeaveRequestForm", 125, 150);
 			Form f2(f1);
@@ -90,7 +90,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Form gets signed succesfully" RESET  << std::endl;
+		std::cout << SET_B_BLK "Form gets signed succesfully" RESET  << std::endl;
 		try {
 			Form f("ITSupportRequestForm", 100, 50);
 			Bureaucrat b("Clara", 75);
@@ -106,7 +106,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Form fails to get signed" RESET  << std::endl;
+		std::cout << SET_B_BLK "Form fails to get signed" RESET  << std::endl;
 		try {
 			Form f("MaintenanceRequestForm", 100, 50);
 			Bureaucrat b("Harl", 125);
@@ -122,7 +122,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "Form is already signed" RESET  << std::endl;
+		std::cout << SET_B_BLK "Form is already signed" RESET  << std::endl;
 		try {
 			Form f("TemporaryWorkaroundApprovalForm", 100, 50);
 			Bureaucrat b1("Deborah", 90);

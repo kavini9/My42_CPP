@@ -16,7 +16,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-#define SET_B_YLW	"\033[1;33m"
+#define SET_B_BLK	"\033[1;30m"
 #define SET_YLW		"\033[33m"
 #define SET_RED		"\033[31m"
 #define RESET		"\033[0m"
@@ -40,7 +40,7 @@ int main()
 	Bureaucrat bureau7("Dottie Stamp", 147);
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "ShrubberyCreationForm: Bureaucrat satisfies execute_grade but form is not signed yet." RESET  << std::endl;
+		std::cout << SET_B_BLK "ShrubberyCreationForm: Bureaucrat satisfies execute_grade but form is not signed yet." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form1 << std::endl;
 			std::cout << "bureaucrat: " << bureau5 << std::endl;
@@ -52,7 +52,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "ShrubberyCreationForm: Bureaucrat does not satisfy sign_grade." RESET  << std::endl;
+		std::cout << SET_B_BLK "ShrubberyCreationForm: Bureaucrat does not satisfy sign_grade." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form1 << std::endl;
 			std::cout << "bureaucrat: " << bureau7 << std::endl;
@@ -64,7 +64,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "ShrubberyCreationForm: Bureaucrat satisfies sign_grade but not execute_grade." RESET  << std::endl;
+		std::cout << SET_B_BLK "ShrubberyCreationForm: Bureaucrat satisfies sign_grade but not execute_grade." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form1 << std::endl;
 			std::cout << "bureaucrat: " << bureau6 << std::endl;
@@ -77,7 +77,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "ShrubberyCreationForm: The form is already signed." RESET  << std::endl;
+		std::cout << SET_B_BLK "ShrubberyCreationForm: The form is already signed." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form1 << std::endl;
 			std::cout << "bureaucrat: " << bureau5 << std::endl;
@@ -89,7 +89,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "ShrubberyCreationForm: File creation fails." RESET  << std::endl;
+		std::cout << SET_B_BLK "ShrubberyCreationForm: File creation fails." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form4 << std::endl;
 			std::cout << "bureaucrat: " << bureau5 << std::endl;
@@ -102,7 +102,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "ShrubberyCreationForm: Bureaucrat executes form successfully." RESET  << std::endl;
+		std::cout << SET_B_BLK "ShrubberyCreationForm: Bureaucrat executes form successfully." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form1 << std::endl;
 			std::cout << "bureaucrat: " << bureau5 << std::endl;
@@ -114,7 +114,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "RobotomyRequestForm: Bureaucrat satisfies execute_grade but form is not signed yet." RESET  << std::endl;
+		std::cout << SET_B_BLK "RobotomyRequestForm: Bureaucrat satisfies execute_grade but form is not signed yet." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form2 << std::endl;
 			std::cout << "bureaucrat: " << bureau3 << std::endl;
@@ -126,7 +126,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "RobotomyRequestForm: Bureaucrat does not satisfy sign_grade." RESET  << std::endl;
+		std::cout << SET_B_BLK "RobotomyRequestForm: Bureaucrat does not satisfy sign_grade." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form2 << std::endl;
 			std::cout << "bureaucrat: " << bureau5 << std::endl;
@@ -138,7 +138,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "RobotomyRequestForm: Bureaucrat satisfies sign_grade but not execute_grade." RESET  << std::endl;
+		std::cout << SET_B_BLK "RobotomyRequestForm: Bureaucrat satisfies sign_grade but not execute_grade." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form2 << std::endl;
 			std::cout << "bureaucrat: " << bureau4 << std::endl;
@@ -151,7 +151,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "RobotomyRequestForm: Bureaucrat executes form successfully." RESET  << std::endl;
+		std::cout << SET_B_BLK "RobotomyRequestForm: Bureaucrat executes form successfully." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form2 << std::endl;
 			std::cout << "bureaucrat: " << bureau3 << std::endl;
@@ -163,7 +163,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "PresidentialPardonForm: Bureaucrat satisfies execute_grade but form is not signed yet." RESET  << std::endl;
+		std::cout << SET_B_BLK "PresidentialPardonForm: Bureaucrat satisfies execute_grade but form is not signed yet." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form3 << std::endl;
 			std::cout << "bureaucrat: " << bureau1 << std::endl;
@@ -175,7 +175,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "PresidentialPardonForm: Bureaucrat does not satisfy sign_grade." RESET  << std::endl;
+		std::cout << SET_B_BLK "PresidentialPardonForm: Bureaucrat does not satisfy sign_grade." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form3 << std::endl;
 			std::cout << "bureaucrat: " << bureau3 << std::endl;
@@ -187,7 +187,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "PresidentialPardonForm: Bureaucrat satisfies sign_grade but not execute_grade." RESET  << std::endl;
+		std::cout << SET_B_BLK "PresidentialPardonForm: Bureaucrat satisfies sign_grade but not execute_grade." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form3 << std::endl;
 			std::cout << "bureaucrat: " << bureau2 << std::endl;
@@ -200,7 +200,7 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_YLW "PresidentialPardonForm: Bureaucrat executes form successfully." RESET  << std::endl;
+		std::cout << SET_B_BLK "PresidentialPardonForm: Bureaucrat executes form successfully." RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form3 << std::endl;
 			std::cout << "bureaucrat: " << bureau1 << std::endl;
