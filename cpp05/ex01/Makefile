@@ -6,11 +6,11 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 22:17:10 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/31 19:37:01 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/11/10 17:09:56 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = form
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:45 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/31 21:10:30 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:25:49 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,6 @@
 
 int main()
 {
-	// {
-	// 	std::cout << SET_B_BLK "Default Constructor Instantiation" RESET  << std::endl;
-	// 	try{
-	// 		Bureaucrat b0;
-	// 		std::cout << "b0: " << b0 << std::endl;
-	// 	}
-	// 	catch (std::exception& e) {
-	// 		std::cout << "Error: " << e.what() << std::endl;
-	// 	}
-	// }
 	{
 		std::cout << std::endl;
 		std::cout << SET_B_BLK "Successfull Prameterized Constructor Instantiation and GradeTooHigh Exception" RESET  << std::endl;
@@ -75,23 +65,6 @@ int main()
 			std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;
 		}
 	}
-	// {
-	// 	std::cout << std::endl;
-	// 	std::cout << SET_B_BLK "Copy Assignment Operator" RESET  << std::endl;
-	// 	try {
-	// 		Bureaucrat b5("Inkley", 100);
-	// 		Bureaucrat b6;
-	// 		b6 = b5;
-	// 		std::cout << "b5: " << b5 << std::endl;
-	// 		std::cout << "b6: " << b6 << std::endl;
-	// 		b5.incrementGrade();
-	// 		std::cout << "b5: " << b5 << std::endl;
-	// 		std::cout << "b6: " << b6 << std::endl;
-	// 	}
-	// 	catch (std::exception& e) {
-	// 		std::cout << "Error: " << e.what() << std::endl;
-	// 	}
-	// }
 	{
 		std::cout << std::endl;
 		std::cout << SET_B_BLK "GradeTooHigh Exception at Instantiation" RESET  << std::endl;

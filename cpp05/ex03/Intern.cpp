@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:28:21 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/18 22:28:22 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:25:54 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ Intern::Intern() {
 Intern::Intern(const Intern& other) {
 	std::cout << "Intern: Copy constructor called" << std::endl;
     (void) other;
-	// *this = other;
 }
 
 Intern& Intern::operator=(const Intern& other) {
 	std::cout << "Intern: Copy assignment operator called" << std::endl;
-	// if (this != &other)
-	// 	*this = other;
     (void) other;
 	return (*this);
 }
@@ -39,21 +36,27 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& formTarg
     int arrLen = sizeof(formType) / sizeof(*formType);
     int formId;
 	for(formId = 0 ; formId < arrLen ; formId++) {
-		if(!formType[formId].compare(formName)) {
-			std::cout << SET_GRN "Intern creates form " << formType[formId] << RESET << std::endl;
+		if(!formType[formId].compare(formName)) 
             break;
-        }
     }
+	AForm* form =nullptr;
 	switch (formId) {
 		case 0:
-			return new ShrubberyCreationForm(formTarget);
+			form = new ShrubberyCreationForm(formTarget);
+			break;
 		case 1:
-			return new RobotomyRequestForm(formTarget);
+			form = new RobotomyRequestForm(formTarget);
+			break;
 		case 2:
-			return new PresidentialPardonForm(formTarget);
+			form = new PresidentialPardonForm(formTarget);
+			break;
 		default:
 			std::cout << SET_RED "Intern couldn't create the form. Invalid name." RESET << std::endl;
-		 	return nullptr;
+		 	return form;
 	}
+	std::cout << SET_GRN "Intern creates form " << formType[formId] << RESET << std::endl;
+	return form;
 }
+
+// throw std::bad_alloc();
 

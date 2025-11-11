@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:26:43 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/03 23:42:39 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:45:35 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
 	std::cout << drilling_noise << std::endl;
 	std::srand(time(NULL));
 	if (rand()%100 %2 == 0)
-		std::cout << _target << " has been robotomized successfully." << std::endl;
+		std::cout << SET_GRN << _target << " has been robotomized successfully." RESET << std::endl;
 	else
-		std::cout << _target << " robotomy failed." << std::endl;
+		std::cout << SET_RED << _target << " robotomy failed." RESET << std::endl;
 }

@@ -6,11 +6,11 @@
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 22:28:11 by wweerasi          #+#    #+#              #
-#    Updated: 2025/11/06 16:53:08 by wweerasi         ###   ########.fr        #
+#    Updated: 2025/11/10 19:25:54 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = intern
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 
@@ -28,6 +28,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+shrub_clean:
+	rm *_shrubbery
 
 clean:
 	rm -f $(OBJ)

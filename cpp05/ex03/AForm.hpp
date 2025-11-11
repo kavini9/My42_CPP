@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:26:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 21:31:13 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:04:00 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm {
 		AForm(const std::string& name, int gradeToSign, int gradeToExecute);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other) = delete;
-		~AForm();
+		virtual ~AForm();
 
 		const std::string& getName() const;
 		int	getSignStatus() const;

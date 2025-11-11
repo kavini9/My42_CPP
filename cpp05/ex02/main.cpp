@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:27:05 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/03 23:47:25 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:36:36 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <unistd.h>
 
 #define SET_B_BLK	"\033[1;30m"
 #define SET_YLW		"\033[33m"
@@ -151,11 +152,15 @@ int main()
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_BLK "RobotomyRequestForm: Bureaucrat executes form successfully." RESET  << std::endl;
+		std::cout << SET_B_BLK "RobotomyRequestForm: Bureaucrat executes form successfully. Loop 10 times to see 50\% success rate" RESET  << std::endl;
 		try {
 			std::cout << "form: " << *form2 << std::endl;
 			std::cout << "bureaucrat: " << bureau3 << std::endl;
 			bureau3.executeForm(*form2);
+			for(int i = 0; i < 10; i++) {
+				bureau3.executeForm(*form2);
+				usleep(1000000);
+			}
 		}
 		catch (std::exception& e) {
 			std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;
@@ -210,4 +215,5 @@ int main()
 			std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;
 		}
 	}
+	std::cout << std::endl;
 }

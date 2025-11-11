@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:16:36 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/01 19:25:46 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:09:19 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,3 @@ std::ostream	&operator<<(std::ostream& os, const Bureaucrat& bureau) {
 	os << bureau.getName() << ", bureaucrat grade " << bureau.getGrade();
 	return (os);
 }
-
-//Error: std::bad_alloc
