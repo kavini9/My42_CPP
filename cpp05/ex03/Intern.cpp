@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:28:21 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/11 18:25:54 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:29:03 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& formTarg
 		if(!formType[formId].compare(formName)) 
             break;
     }
-	AForm* form =nullptr;
+	AForm* form = nullptr;
 	switch (formId) {
 		case 0:
 			form = new ShrubberyCreationForm(formTarget);

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:27:05 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/11/10 18:36:36 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:30:07 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main()
 	ShrubberyCreationForm totalFail("TooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongTargetName");
 	AForm* form1 = &someGreen;
 	AForm* form2 = &roboMate;
-	AForm *form3 = &noMercy;
-	AForm *form4 = &totalFail;
+	AForm* form3 = &noMercy;
+	AForm* form4 = &totalFail;
 	Bureaucrat bureau1("Eustace Bureau", 3);
 	Bureaucrat bureau2("Cletus Copperfield", 15);
 	Bureaucrat bureau3("Abigail Inkwood", 30);
