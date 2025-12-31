@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:22:52 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/29 21:39:42 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:17:50 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,13 @@ int main() {
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Scene: Delta tries to get repaired causing overflow (UINT_MAX = 4,294,967,295)." RESET << std::endl;
 	d.beRepaired(UINT_MAX - 5);
-	
-	
+
+	std::cout << std::endl;
+	std::cout << SET_B_YLW "Test: Behaviour of destructors with new." RESET << std::endl;
+	ClapTrap* t = new(std::nothrow) ClapTrap("Theta");
+	if (t != nullptr)
+		delete t;
+
 	std::cout << std::endl;
 	return (0);
 }

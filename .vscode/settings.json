@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "compare": "cpp",
+        "format": "cpp",
+        "type_traits": "cpp"
+    }
+}

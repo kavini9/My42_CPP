@@ -5,19 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/26 18:21:04 by wweerasi          #+#    #+#              #
-#    Updated: 2025/10/03 18:45:34 by wweerasi         ###   ########.fr        #
+#    Created: 2025/12/31 15:15:59 by wweerasi          #+#    #+#              #
+#    Updated: 2025/12/31 15:19:04 by wweerasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = scalar_converter
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20
 
 SRC = main.cpp \
-	ClapTrap.cpp \
-	FragTrap.cpp
-	 
+	ScalarConverter.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 19:06:44 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/01 23:43:02 by wweerasi         ###   ########.fr       */
+/*   Created: 2025/12/31 15:20:29 by wweerasi          #+#    #+#             */
+/*   Updated: 2025/12/31 18:10:43 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
 
-#include "ClapTrap.hpp"
 #include <string>
-#include <iostream>
 
-class ScavTrap : public ClapTrap {
+class ScalarConverter {
+	private:
+		ScalarConverter() = delete;
+		ScalarConverter(const ScalarConverter& other) = delete;
+		ScalarConverter& operator=(ScalarConverter& other) = delete;
+		~ScalarConverter() = delete;
+	
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap& other);
-		ScavTrap&   operator=(const ScavTrap& other);
-		~ScavTrap();
-
-		void	attack(const std::string& target) override;
-		void	guardGate();
+		static void convert(const std::string& literal);
 };
 
 #endif

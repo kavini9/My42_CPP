@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:22:52 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/29 21:39:42 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:16:15 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ int main() {
 
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Behaviour of destructors with new." RESET << std::endl;
-	FragTrap* e = new FragTrap("Eta");
-	delete e;
+	FragTrap* e = new(std::nothrow) FragTrap("Eta");
+	if (e != nullptr)
+		delete e;
 	
 	std::cout << std::endl;
 	return (0);

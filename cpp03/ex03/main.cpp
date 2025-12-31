@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:22:52 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/10/02 22:21:34 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:33:52 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int main() {
 	a.takeDamage(3);
 
 	std::cout << std::endl;
-	std::cout << SET_B_YLW "Scene: Beta goes to gate keper mode." RESET << std::endl;
+	std::cout << SET_B_YLW "Scene: Beta goes to gate keeper mode." RESET << std::endl;
 	b.guardGate();
 
 	std::cout << std::endl;
@@ -83,6 +83,27 @@ int main() {
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Scene: Beta annouces who he is." RESET << std::endl;
 	b.whoAmI();
+
+	std::cout << std::endl;
+	std::cout << SET_B_YLW "Test: Copy constructor and Printing attribute values." RESET << std::endl;
+	DiamondTrap e(b);
+	std::cout << "Beta_hitPoints: " << b.getHitPoints() << std::endl;
+	std::cout << "Beta_energyPoints: " << b.getEnergyPoints() << std::endl;
+	std::cout << "Beta_attackDamage: " << b.getAttackDamage() << std::endl;
+	std::cout << "Eta_hitPoints: " << e.getHitPoints() << std::endl;
+	std::cout << "Eta_energyPoints: " << e.getEnergyPoints() << std::endl;
+	std::cout << "Eta_attackDamage: " << e.getAttackDamage() << std::endl;
+
+	std::cout << std::endl;
+	std::cout << SET_B_YLW "Test: Copy Assignment Operator and Printing attribute values." RESET << std::endl;
+	DiamondTrap a_;
+	a_ = a;
+	std::cout << "Alpha_hitPoints: " << a.getHitPoints() << std::endl;
+	std::cout << "Alpha_energyPoints: " << a.getEnergyPoints() << std::endl;
+	std::cout << "Alpha_attackDamage: " << a.getAttackDamage() << std::endl;
+	std::cout << "Alpha__hitPoints: " << a_.getHitPoints() << std::endl;
+	std::cout << "Alpha__energyPoints: " << a_.getEnergyPoints() << std::endl;
+	std::cout << "Alpha__attackDamage: " << a_.getAttackDamage() << std::endl;
 	
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Functionality of virtual functions." RESET << std::endl;
@@ -97,9 +118,10 @@ int main() {
 
 	std::cout << std::endl;
 	std::cout << SET_B_YLW "Test: Behaviour of destructors with new." RESET << std::endl;
-	DiamondTrap* e = new DiamondTrap("Eta");
-	delete e;
-	
+	DiamondTrap* t = new(std::nothrow) DiamondTrap("Theta");
+	if (t != nullptr)
+		delete t;
+		
 	std::cout << std::endl;
 	
 	return (0);

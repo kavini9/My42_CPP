@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 21:45:52 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/19 21:33:07 by wweerasi         ###   ########.fr       */
+/*   Updated: 2025/09/22 19:16:21 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int main( void ) {
 	Point b(10, 0);
 	Point c(5, 10);
 	Point p(5, 5);
+	//Point p(5, 20);
+	//Point p(5, 10);
+	//Point p(3, 0);
 
 	bool isInTriangle = bsp(a, b, c, p);
-	std::cout << "P is " << (isInTriangle ? "inside" : "outside") << " the triangle\n";
+	std::cout << "P is " << (isInTriangle ? "" : "not ") << "inside the triangle\n";
 }

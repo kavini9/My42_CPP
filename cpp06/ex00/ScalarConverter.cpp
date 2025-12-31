@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 21:45:46 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/09/22 17:29:46 by wweerasi         ###   ########.fr       */
+/*   Created: 2025/12/31 15:20:24 by wweerasi          #+#    #+#             */
+/*   Updated: 2025/12/31 19:25:14 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "ScalarConverter.hpp"
 
-#include <iostream>
-
-class Fixed {
-
-	private:
-		int					_value;
-		static const int	_fracBitWid  = 8;
-	
-	public:
-		Fixed();
-		Fixed(const Fixed &other);
-		Fixed	&operator=(const Fixed &other);
-		~Fixed();
-
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-};
-
-#endif
+void ScalarConverter::convert(const std::string& literal) {
+     
+}
