@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:20:29 by wweerasi          #+#    #+#             */
-/*   Updated: 2025/12/31 18:10:43 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:32:46 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SCALARCONVERTER_HPP
 
 #include <string>
+#include <limits>
 
 class ScalarConverter {
 	private:
