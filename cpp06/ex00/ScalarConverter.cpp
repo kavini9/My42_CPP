@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:20:24 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/20 18:32:14 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/01/20 21:52:00 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ std::string formatFrac(double val, bool decFlag)
 
 void ScalarConverter::convert(const std::string& lit) {
 	double	d ;
-	if (!lit.empty() && (isChar(lit, d) || isInt(lit, d) ||isFloat(lit, d) || isDouble(lit, d))) {
+	if (!lit.empty() && (isInt(lit, d) || isChar(lit, d) || isFloat(lit, d) || isDouble(lit, d))) {
 		char	c = static_cast<char> (d);
 		int		i = static_cast<int> (d);
 		float	f = static_cast<float> (d);
@@ -86,4 +86,4 @@ void ScalarConverter::convert(const std::string& lit) {
 }
 
 //./scalar_converter 1e39
-//from 1-9 nummbers are taken as chars
+//from 1-9 nummbers are taken as chars // update: changes the typecheck order. now digits cannot be taken as char

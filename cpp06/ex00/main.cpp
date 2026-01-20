@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 18:54:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/20 18:55:15 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/01/20 21:47:12 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,16 @@
 
 int main(int argc, char **argv)
 {
+    if (argc != 2)
+	{
+		std::cout << "Usage:./scalar_converter <parameter>" << std::endl;
+		return (EXIT_FAILURE);
+	}
     try {
-        ScalarConverter::convert(argc == 2 ? argv[1] : "");
-    } catch (std::exception& exception) {
-        std::cout << exception.what() << std::endl;
+        ScalarConverter::convert(argv[1]);
+    } catch (std::exception& e) {
+        std::cout << "Error: " << e.what() << std::endl;
+        return (EXIT_FAILURE);
     }
+    return (EXIT_SUCCESS);
 }
