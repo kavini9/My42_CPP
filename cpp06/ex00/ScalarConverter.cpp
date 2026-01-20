@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:20:24 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/16 23:03:51 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:32:14 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ std::string formatFrac(double val, bool decFlag)
 
 void ScalarConverter::convert(const std::string& lit) {
 	double	d ;
-	bool	decFlag = false;
 	if (!lit.empty() && (isChar(lit, d) || isInt(lit, d) ||isFloat(lit, d) || isDouble(lit, d))) {
 		char	c = static_cast<char> (d);
 		int		i = static_cast<int> (d);
 		float	f = static_cast<float> (d);
-
+		
+		bool decFlag = (std::floor(d) == d && std::isfinite(d));
         if (static_cast<double>(c) == d) {
             if (std::isprint(c))
                 std::cout << "char:	'" << c << "'" << std::endl;
@@ -72,10 +72,8 @@ void ScalarConverter::convert(const std::string& lit) {
         } 
 		else
             std::cout << "char:	impossible" << std::endl;
-        if (static_cast<double>(i) == d) {
+        if (static_cast<double>(i) == d)
             std::cout << "int:	" << i << std::endl;
-			decFlag = true;
-		}
         else
             std::cout << "int:	impossible" << std::endl;
         if (static_cast<double>(f) == d || !std::isfinite(f))
@@ -86,7 +84,6 @@ void ScalarConverter::convert(const std::string& lit) {
     } else
         std::cout << "Invalid input" << std::endl;
 }
-//inf and nan doesnt work.
-//big numbers are printed in scientific notation
 
 //./scalar_converter 1e39
+//from 1-9 nummbers are taken as chars

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 18:54:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/20 18:55:15 by wweerasi         ###   ########.fr       */
+/*   Created: 2026/01/20 18:55:56 by wweerasi          #+#    #+#             */
+/*   Updated: 2026/01/20 19:13:54 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int argc, char **argv)
-{
-    try {
-        ScalarConverter::convert(argc == 2 ? argv[1] : "");
-    } catch (std::exception& exception) {
-        std::cout << exception.what() << std::endl;
-    }
+uintptr_t Serializer::serialize(Data* ptr) {
+	return reinterpret_cast<uintptr_t>(ptr);
+}
+
+Data* Serializer::deserialize(uintptr_t raw) {
+	return reinterpret_cast<Data*>(raw);
 }

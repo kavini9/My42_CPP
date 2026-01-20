@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 18:54:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/20 18:55:15 by wweerasi         ###   ########.fr       */
+/*   Created: 2026/01/20 20:24:10 by wweerasi          #+#    #+#             */
+/*   Updated: 2026/01/20 20:26:13 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConverter.hpp"
+#ifndef C_HPP
+#define C_HPP
 
-int main(int argc, char **argv)
-{
-    try {
-        ScalarConverter::convert(argc == 2 ? argv[1] : "");
-    } catch (std::exception& exception) {
-        std::cout << exception.what() << std::endl;
-    }
-}
+#include "Base.hpp"
+
+class C : public Base {};
+
+# endif
