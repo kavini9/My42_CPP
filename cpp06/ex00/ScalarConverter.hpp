@@ -14,7 +14,10 @@
 #define SCALARCONVERTER_HPP
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 #include <limits>
+#include <cmath>
 
 class ScalarConverter {
 	private:
