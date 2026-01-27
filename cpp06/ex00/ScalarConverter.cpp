@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:20:24 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/20 21:52:00 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/01/25 20:06:45 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ bool isFloat(const std::string& lit, double& dbl) {
 	char* pEnd; 
 	float val = std::strtof(lit.c_str(), &pEnd);
 	dbl = static_cast<double> (val);
-	return (lit.find('.') != lit.npos || !std::isfinite(dbl)) && pEnd != lit.c_str() && *pEnd == 'f'
-		&& *(pEnd + 1) == '\0';// && errno != ERANGE; 
+	return pEnd != lit.c_str()
+			&& ((lit.find('.') != lit.npos && std::isdigit(*(pEnd - 1))) || !std::isfinite(dbl))
+			&& *pEnd == 'f' && *(pEnd + 1) == '\0' && lit.find('e') == lit.npos;
 }
 
 bool isDouble(const std::string& lit, double& dbl) {
@@ -42,8 +43,8 @@ bool isDouble(const std::string& lit, double& dbl) {
 	char* pEnd;
 	dbl = std::strtod(lit.c_str(), &pEnd);
 	return pEnd != lit.c_str()
-		&& *pEnd == '\0';// && errno != ERANGE;//can errno cause problems with inf
-		//(lit.find('.') != lit.npos || !std::isfinite(dbl)) && 
+			&& ((lit.find('.') != lit.npos && std::isdigit(*(pEnd - 1))) || !std::isfinite(dbl)) 
+			&& *pEnd == '\0' && lit.find('e') == lit.npos;
 }
 
 std::string formatFrac(double val, bool decFlag)
@@ -84,6 +85,3 @@ void ScalarConverter::convert(const std::string& lit) {
     } else
         std::cout << "Invalid input" << std::endl;
 }
-
-//./scalar_converter 1e39
-//from 1-9 nummbers are taken as chars // update: changes the typecheck order. now digits cannot be taken as char

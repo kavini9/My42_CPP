@@ -33,4 +33,14 @@ int main() {
         dbl_dbl = std::strtod(arr[i].c_str(), &pEnd);
         std::cout << "arr[" << i << "] :" << arr[i] << "    val: " << dbl << "  in float: "<< static_cast<float>(dbl) << "  in double: "<< dbl_dbl <<"  pEnd: " << pEnd << std::endl;
     }
+
+    double arrdbl[50];
+
+    arrdbl[0] = 1.;
+    arrdbl[1] = .1;
+    arrdbl[2] = .1e1;
+    arrdbl[3] = 4;
+    arrdbl[4] = inf;
+
+
 }
