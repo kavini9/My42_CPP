@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:05:08 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/01/27 22:41:27 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/01/31 19:35:42 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,15 @@
 # include<iostream>
 
 template <typename T, typename F>
-void iter(T *addr, const size_t len, F func) {
-    
+void iter(T *arr, const size_t len, F func) {
+    for (size_t i = 0; i < len; i++)
+        func((arr[i]));
 }
+
+// template <typename T, typename F>
+// void iter(T *arr, const size_t len, F func) {
+//     for (size_t i = 0; i < len; i++)
+//         func((arr[i]))
+// }
 
 #endif
