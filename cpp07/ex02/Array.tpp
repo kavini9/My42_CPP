@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:06:23 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/01 20:14:53 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/02 20:18:12 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ Array<T>::~Array() {
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int index) {
+T& Array<T>::operator[](const unsigned int index) {
 	if (index >= _size)
 		throw std::out_of_range("index out of bounds");
 	return _data[index];
 }
 
 template <typename T>
-const T& Array<T>::operator[](unsigned int index) const {
+const T& Array<T>::operator[](const unsigned int index) const {
 	if (index >= _size)
 		throw std::out_of_range("index out of bounds");
 	return _data[index];

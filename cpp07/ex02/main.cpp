@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:05:43 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/01 21:03:41 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/02 20:22:24 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int main() {
 			Array<char>			c(n);
 			Array<char *>		str(n);
 			Array<std::string>	s(n);
-
 			std::cout << "i.size()	= " << i.size() << "	i[0]	= " << i[0] << std::endl
 						<< "f.size()	= " << f.size() << "	f[0]	= " << f[0] << std::endl
 						<< "c.size()	= " << c.size() << "	c[0]	= " << c[0] << std::endl
@@ -115,7 +114,7 @@ int main() {
 	}
 	{
 		std::cout << std::endl;
-		std::cout << SET_B_BLK "Out of bound exeption" RESET  << std::endl;
+		std::cout << SET_B_BLK "Out of bound exeption for operator []" RESET  << std::endl;
 		try{
 			unsigned int n = 3;
 			Array<int>			a(n);
@@ -126,6 +125,28 @@ int main() {
 			}
 			std::cout << "a.size()	= " << a.size() << std::endl;
 			std::cout << "a[" << n << "] = " << a[n] << std::endl;
+		}
+		catch (std::exception& e) {
+			std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;
+		}
+	}
+	{
+		std::cout << std::endl;
+		std::cout << SET_B_BLK "Constant qualifier for operator []" RESET  << std::endl;
+		try{
+			unsigned int n = 7;
+			Array<int>			a(n);
+			Array<const int>	b(n);
+			const Array<int>	c(n);
+			int x = 5;
+			a[1] = x;
+			// b[1] = x;
+			// c[1] = x;
+			// //make member attributes public for testing
+			// int y[] = {9,8,7,6};
+			// a._data = y;
+			// b._data = y;
+			// c._data = y;			
 		}
 		catch (std::exception& e) {
 			std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;

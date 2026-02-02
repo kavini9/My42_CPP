@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:06:31 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/01 20:14:48 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/02 20:19:19 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Array {
 		Array& operator=(const Array& other);
 		~Array();
 
-		T& operator[](unsigned int index);
-		const T& operator[](unsigned int index) const;
+		T& operator[](const unsigned int index);
+		const T& operator[](const unsigned int index) const;
 
 		unsigned int size() const;
 };
