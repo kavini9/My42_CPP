@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 21:27:19 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/13 22:59:25 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/17 22:13:55 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
+#include <limits>
 
 class Span {
 	private:
 		unsigned int _maxSize = 0;
-		std::vector<int> _intList;
+		mutable std::vector<int> _intVec;
 
 	public:
 		Span() = default;
@@ -34,8 +35,10 @@ class Span {
 		unsigned int longestSpan() const;
 
 		template <typename InputIt>
-		void addNumber(InputIt first, InputIt last) {
-			
+		void addRange(InputIt first, InputIt last) {
+			if (std::distance(first, last) + _intVec.size() > _maxSize)
+				throw std::out_of_range("No enough space in Span")
+			_intVec.insert(_intVec.end(), first, last);
 		}
 };
 

@@ -6,7 +6,12 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 21:30:08 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/13 21:37:49 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/17 22:40:37 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Span.hpp"
+
+#define SET_B_BLK	"\033[1;30m"
+#define SET_RED		"\033[31m"
+#define RESET		"\033[0m"
