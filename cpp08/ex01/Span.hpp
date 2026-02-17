@@ -18,8 +18,25 @@
 #include <stdexcept>
 
 class Span {
-    private:
-        
+	private:
+		unsigned int _maxSize = 0;
+		std::vector<int> _intList;
+
+	public:
+		Span() = default;
+		explicit Span(unsigned int maxSize);
+		Span(const Span& other) = default;
+		Span& operator=(const Span& other) = default;
+		~Span() = default;
+
+		void addNumber(int num);
+		unsigned int shortestSpan() const;
+		unsigned int longestSpan() const;
+
+		template <typename InputIt>
+		void addNumber(InputIt first, InputIt last) {
+			
+		}
 };
 
 #endif
