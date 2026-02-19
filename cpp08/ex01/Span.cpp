@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 21:27:09 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/17 22:31:58 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/19 22:26:44 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 Span::Span(unsigned int maxSize) : _maxSize(maxSize) {
 	_intVec.reserve(maxSize);
 }
+
+std::vector<int>& Span::getIntVec() const {return _intVec;}
+unsigned int Span::getSpanSize() const {return _intVec.size();}
 
 void Span::addNumber(int num) {
 	if (_intVec.size() >= _maxSize)
@@ -40,4 +43,19 @@ unsigned int Span::longestSpan() const {
 	auto [minIt, maxIt] = std::minmax_element(_intVec.begin(), _intVec.end());
 	unsigned int lSpan = static_cast<unsigned int> (static_cast<long>(*maxIt) - *minIt);
 	return lSpan;
+}
+
+std::ostream& operator<<(std::ostream& os, const Span& span) {
+	os << "[ ";
+    auto it = span.getIntVec().begin();
+    auto end = span.getIntVec().end();
+    if (it != end) {
+        os << *it;
+        ++it;
+    }
+    for (; it != end; ++it) {
+        os << ", " << *it;
+    }
+    os << " ]";
+	return (os);
 }
