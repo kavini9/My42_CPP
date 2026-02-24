@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 21:30:08 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/19 22:28:36 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/24 14:19:20 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main() {
 		try {
 			Span span = Span(5);
 
-			span.addNumber(6);
+			span.addNumber(6); 
 			span.addNumber(3);
 			span.addNumber(17);
 			span.addNumber(9);
