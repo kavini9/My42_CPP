@@ -6,12 +6,12 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:05:43 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/02 20:22:24 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/24 20:15:25 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Array.hpp"
+#include <iostream>
 
 #define SET_B_BLK	"\033[1;30m"
 #define SET_RED		"\033[31m"
