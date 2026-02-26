@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 21:30:08 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/24 14:19:20 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/02/26 22:25:28 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 int main() {
 	{
-		std::cout << SET_B_BLK "Normal functionality - Subject example" RESET << std::endl;
+		std::cout << SET_B_BLK "Normal functionality - Subject main" RESET << std::endl;
 		try {
 			Span span = Span(5);
 
