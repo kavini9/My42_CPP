@@ -10,3 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+
+#include <map>
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <regex>
+#include <chrono>
+
+class BitcoinExchange {
+	private:
+		std::map<std::string, double> _database;
+
+	public:
+		BitcoinExchange() = default;
+		BitcoinExchange(const BitcoinExchange& other) = default;
+		BitcoinExchange& operator=(const BitcoinExchange& other) = default;
+		~BitcoinExchange() = default;
+
+		void loadDatabase(std::ifstream& fileStream);
+		void queryDatabase(std::ifstream& date) const;
+};
+
+#endif
