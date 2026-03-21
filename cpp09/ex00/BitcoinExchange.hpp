@@ -20,6 +20,9 @@
 #include <regex>
 #include <chrono>
 
+#define SET_RED		"\033[31m"
+#define RESET		"\033[0m"
+
 class BitcoinExchange {
 	private:
 		std::map<std::string, double> _database;

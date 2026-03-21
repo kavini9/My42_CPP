@@ -10,3 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RPN_HPP
+#define RPN_HPP
+
+#include <stack>
+#include <string>
+#include <sstream>
+#include <climits>
+
+#define SET_RED		"\033[31m"
+#define RESET		"\033[0m"
+
+class RPN {
+	private:
+		std::stack<int> _stack;
+	
+	public:
+		RPN() = default;
+		RPN(const RPN& other) = default;
+		RPN& operator=(const RPN& other) = default;
+		~RPN() = default;
+
+		int evaluate(const std::string& expression);
+};
+
+#endif

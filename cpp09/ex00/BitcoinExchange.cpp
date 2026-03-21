@@ -34,12 +34,12 @@ void BitcoinExchange::queryDatabase(std::ifstream& queryFile) const
 	std::smatch matches;
 
 	if (std::getline(queryFile, line) && !std::regex_match(line, headerRegex))
-		throw std::runtime_error("Invalid query file header");
+		throw std::runtime_error("invalid query header.");
 
 	while (std::getline(queryFile, line)) {
 		try {
 			if (!std::regex_match(line, matches, queryRegex))
-				throw std::runtime_error("Error: bad input => " + line);
+				throw std::runtime_error("bad input => " + line);
 
 			std::string dateStr	= matches[1].str();
 			std::chrono::year	year{std::stoi(matches[2].str())};
@@ -48,22 +48,22 @@ void BitcoinExchange::queryDatabase(std::ifstream& queryFile) const
 			double value		= std::stod(matches[5].str());
 
 			if (!std::chrono::year_month_day{year, month, day}.ok())
-				throw std::runtime_error("Error: bad input => " + dateStr);
+				throw std::runtime_error("bad input => " + dateStr);
 			if (value < 0)
-				throw std::runtime_error("Error: not a positive number.");
+				throw std::runtime_error("not a positive number.");
 			if (value > 1000)
-				throw std::runtime_error("Error: too large a number.");
+				throw std::runtime_error("too large a number.");
 
 			auto it = _database.upper_bound(dateStr);
 			if (it == _database.begin())
-				throw std::runtime_error("Error: no data available prior to " + it -> first);
+				throw std::runtime_error("no data available prior to " + it -> first);
 			--it;
 			double rate = it->second;
 			double result = value * rate;
 			std::cout << dateStr << " => " << value << " = " << result << std::endl;
 
 		} catch (const std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
+			std::cout << SET_RED "Error: " << e.what() << RESET <<std::endl;
 		}
 	}	
 }
