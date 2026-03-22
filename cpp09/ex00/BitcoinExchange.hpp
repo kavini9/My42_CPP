@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:26 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/19 22:39:27 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/22 17:51:03 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <iostream>
 #include <regex>
 #include <chrono>
+#include <stdexcept>
 
 #define SET_RED		"\033[31m"
 #define RESET		"\033[0m"

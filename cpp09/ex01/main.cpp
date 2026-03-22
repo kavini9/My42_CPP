@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:35 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/19 22:39:36 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/22 17:24:35 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char** av)
 		RPN expr;
 		std::cout << expr.evaluate(av[1]) << std::endl;
 	} catch (const std::exception& e) {
-		std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;
+		std::cerr << SET_RED "Error: " << e.what() << RESET << std::endl;
 		return (EXIT_FAILURE);
 	}
 }

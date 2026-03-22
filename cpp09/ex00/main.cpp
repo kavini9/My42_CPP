@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:30 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/19 22:39:31 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/22 17:25:12 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int ac, char** av)
 		btc.loadDatabase(dbFile);
 		btc.queryDatabase(queryFile);
 	} catch (const std::exception& e) {
-		std::cout << SET_RED "Error: " << e.what() << RESET << std::endl;
+		std::cerr << SET_RED "Error: " << e.what() << RESET << std::endl;
 		return (EXIT_FAILURE);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:46 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/19 22:39:47 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/22 17:51:12 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <sstream>
 #include <climits>
+#include <stdexcept>
 
 #define SET_RED		"\033[31m"
 #define RESET		"\033[0m"
