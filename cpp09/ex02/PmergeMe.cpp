@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/22 20:06:27 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/24 21:31:46 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,17 @@ void PmergeMe::parseSequence(char** intSeq) {
 
 void PmergeMe::mergeInsertSort() {
 	
+}
+
+inline std::vector<int> generateJacobsthal(int pendSize) {
+    if (pendSize <= 0) return {};
+    if (pendSize == 1) return {1};
+
+    std::vector<int> jacob = {1, 3}; 
+    
+    while (jacob.back() < pendSize) {
+        int next = jacob.back() + 2 * jacob[jacob.size() - 2];
+        jacob.push_back(next);
+    }
+    return jacob;
 }
