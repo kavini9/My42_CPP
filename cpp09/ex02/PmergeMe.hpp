@@ -90,7 +90,7 @@ class PmergeMe {
 			if (!pend.empty())
 				lastJacobJump = 1;
 
-			for (int i = 1; i < static_cast<int>(_jacobsthalSeq.size()); ++i) {//this condition is loose. might not iterate in the last run
+			for (int i = 1; i < static_cast<int>(_jacobsthalSeq.size()); ++i) {
 				int maxId = std::min(_jacobsthalSeq[i], static_cast<int>(pend.size()));
 				for (int j = maxId; j > lastJacobJump; --j) {
 					int b = pend[j - 1];
