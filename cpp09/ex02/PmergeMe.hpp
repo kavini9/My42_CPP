@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:40:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/29 06:32:02 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/29 06:48:58 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include <ranges>
 
 #define SET_RED		"\033[31m"
+#define SET_GRN		"\033[32m"
 #define RESET		"\033[0m"
 
 class PmergeMe {
