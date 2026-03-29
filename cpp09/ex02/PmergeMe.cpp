@@ -22,7 +22,7 @@ void PmergeMe::parseSequence(char** rawSeq) {
 		if (pEnd && *pEnd != '\0')
 			throw std::runtime_error("non-numeric character found.");
 		if (num < 0)
-			throw std::runtime_error("non-positive integer found.");
+			throw std::runtime_error("negative integer found.");
 		if (num > INT_MAX)    
 			throw std::runtime_error("integer overflow.");
 		_intSeq.push_back(static_cast<int>(num));

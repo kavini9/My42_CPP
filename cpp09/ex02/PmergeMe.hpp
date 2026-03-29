@@ -74,7 +74,7 @@ class PmergeMe {
 			sortMergeInsert(main);
 			Container pend;
 			for (int a : main) {
-				for (std::pair<int, int> p: pairs) {
+				for (std::pair<int, int>& p: pairs) {
 					if (p.first == a) {
 						pend.push_back(p.second);
 						p.first = -1;

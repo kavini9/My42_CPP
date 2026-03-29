@@ -15,7 +15,7 @@
 int main(int ac, char** av) {
 	if (ac < 2) {
 		std::cerr << SET_RED "Error: invalid no. of argument(s)." << std::endl
-		<< "Usage: ./PmergeMe <positive integer sequence>" RESET << std::endl;
+		<< "Usage: ./PmergeMe <non-negative integer sequence>" RESET << std::endl;
 		return (EXIT_FAILURE);
 	}
 	try {
