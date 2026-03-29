@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:40:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/29 05:49:36 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/29 06:32:02 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,10 @@ class PmergeMe {
 			if (seqSize < 2)
 				return;
 			int straggler = seqSize % 2 ? seq.back() : -1;
-			if (straggler != -1)
-				seq.pop_back(); --seqSize;
+			if (straggler != -1) {
+					seq.pop_back();
+					--seqSize;			
+			}
 			std::vector<std::pair<int, int>> pairs;
 			Container main;
 			
