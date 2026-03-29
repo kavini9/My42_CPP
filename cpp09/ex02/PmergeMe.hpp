@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:40:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/24 21:30:02 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/29 05:49:36 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,73 +18,86 @@
 #include <deque>
 #include <stdexcept>
 #include <climits>
+#include <chrono>
+#include <iomanip>
+#include <ranges>
 
 #define SET_RED		"\033[31m"
 #define RESET		"\033[0m"
 
 class PmergeMe {
-    private:
-        std::vector<int>    _vecSeq;
-        std::deque<int>     _deqSeq;
-    
-    public:
+	private:
+		std::vector<int>    _intSeq;
+		std::vector<int>    _jacobsthalSeq;
+		
+	public:
 		PmergeMe() = default;
 		PmergeMe(const PmergeMe& other) = default;
 		PmergeMe& operator=(const PmergeMe& other) = default;
 		~PmergeMe() = default;
 
-        void parseSequence(char** intSeq);
-        
-        template <typename Container>
-        void mergeInsertionSort(Container& arr) {
-        if (arr.size() < 2) return;
-        bool hasStraggler = (arr.size() % 2 != 0);
-        int straggler = 0; 
-        if (hasStraggler) {
-            straggler = arr.back();
-            arr.pop_back();
-        }
-        std::vector<std::pair<int, int>> pairs;
-        Container winners;
+		void run(char** rawSeq);
+		void parseSequence(char** rawSeq);
+		static void printElapsedTime(const std::string& contType, size_t contSize, double elapsedUs);
+		void generateJacobsthal(int pendSize);
+		
+		template <typename Container>
+		static void printSequence(const std::string& preText, const Container& seq) {
+			std::cout << preText;
+			for (size_t i = 0; i < seq.size(); ++i)
+				std::cout << " " << seq[i];
+			std::cout <<std::endl;
+		}
+		
+		template <typename Container>
+		void sortMergeInsert(Container& seq) {
+			size_t seqSize = seq.size();
+			if (seqSize < 2)
+				return;
+			int straggler = seqSize % 2 ? seq.back() : -1;
+			if (straggler != -1)
+				seq.pop_back();
+			std::vector<std::pair<int, int>> pairs;
+			Container main;
+			
+			pairs.reserve(seqSize/2);
+			for (size_t i = 0; i < seqSize; i += 2) {
+				int a = seq[i];
+				int b = seq[i + 1];
+				if (a < b) std::swap(a, b);
+				pairs.emplace_back(a,b);
+				main.push_back(a);
+			}
+			sortMergeInsert(main);
+			Container pend;
+			for (int a : main) {
+				for (std::pair<int, int> p: pairs) {
+					if (p.first == a) {
+						pend.push_back(p.second);
+						p.first = -1;
+						break;
+					}
+				}
+			}
+			if (straggler != -1) 
+				pend.push_back(straggler);
+			int lastJacobJump = 0;
+			if (!pend.empty())
+				main.insert(main.begin(), pend[0]);
+			if (!pend.empty())
+				lastJacobJump = 1;
 
-        pairs.reserve(arr.size() / 2);
-        for (size_t i = 0; i < arr.size(); i += 2) {
-            int a = arr[i];
-            int b = arr[i + 1];
-            if (a < b) std::swap(a, b); 
-            
-            pairs.emplace_back(a, b);
-            winners.push_back(a);
-        }
-        mergeInsertionSort(winners);
-        Container pend;
-        for (int w : winners) {
-            for (auto& p : pairs) {
-                if (p.first == w) {
-                    pend.push_back(p.second);
-                    p.first = -1;
-                    break;
-                }
-            }
-        }
-        if (hasStraggler) pend.push_back(straggler);
-        Container mainChain = winners;
-        mainChain.insert(mainChain.begin(), pend[0]);
-        auto jacob = generateJacobsthal(pend.size());
-        int lastInsertedIdx = 0;
-
-        for (size_t i = 1; i < jacob.size(); ++i) {
-            int maxIdx = std::min(jacob[i], static_cast<int>(pend.size()));
-
-            for (int j = maxIdx; j > lastInsertedIdx; --j) {
-                int loserToInsert = pend[j - 1];
-                auto it = std::ranges::lower_bound(mainChain, loserToInsert);
-                mainChain.insert(it, loserToInsert);
-            }
-            lastInsertedIdx = maxIdx;
-        }
-        arr = mainChain;
-        }
+			for (int i = 1; _jacobsthalSeq[i] < static_cast<int>(pend.size()); ++i) {//this condition is loose. might not iterate in the last run
+				int maxId = std::min(_jacobsthalSeq[i], static_cast<int>(pend.size()));
+				for (int j = maxId; j > lastJacobJump; --j) {
+					int b = pend[j - 1];
+					auto iter = std::lower_bound(main.begin(), main.end(), b);
+					main.insert(iter, b);
+				}
+				lastJacobJump = maxId;
+			}
+			seq = main;
+		}
 };
 
 #endif

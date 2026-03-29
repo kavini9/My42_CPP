@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:51 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/22 18:26:23 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/29 05:42:13 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ int main(int ac, char** av) {
 		<< "Usage: ./PmergeMe <positive integer sequence>" RESET << std::endl;
 		return (EXIT_FAILURE);
 	}
-    
-    
+	try {
+		PmergeMe app;
+		app.run(&av[1]);
+	} catch (const std::exception& e) {
+		std::cerr << "Error" << std::endl;
+		return EXIT_FAILURE;
+	}
+	return (EXIT_SUCCESS);
 }

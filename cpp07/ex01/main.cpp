@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:04:55 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/02/24 20:14:33 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/28 23:09:54 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void print(const T& var)
 }
 
 template <typename T>
-void add10(T& val)
+void add5(T& val)
 {
 	val += 5;
 }
@@ -46,7 +46,7 @@ int main() {
 	std::cout << SET_B_BLK "--- Integer Array ---" RESET << std::endl;
 	::iter(arr_i, std::size(arr_i), print<int>);
 	std::cout << std::endl;
-	::iter(arr_i, std::size(arr_i), add10<int>);
+	::iter(arr_i, std::size(arr_i), add5<int>);
 	::iter(arr_i, std::size(arr_i), print<int>);
 	std::cout << std::endl;
 	
@@ -57,14 +57,14 @@ int main() {
 	std::cout << std::endl << SET_B_BLK "--- Float Array ---" RESET << std::endl;
 	::iter(arr_f, std::size(arr_f), print<float>);
 	std::cout << std::endl;
-	::iter(arr_f, std::size(arr_f), add10<float>);
+	::iter(arr_f, std::size(arr_f), add5<float>);
 	::iter(arr_f, std::size(arr_f), print<float>);
 	std::cout << std::endl;
 
 	std::cout << std::endl << SET_B_BLK "--- Char Array ---" RESET << std::endl;
 	::iter(arr_c, std::size(arr_c), print<char>);
 	std::cout << std::endl;
-	::iter(arr_c, std::size(arr_c), add10<char>);
+	::iter(arr_c, std::size(arr_c), add5<char>);
 	::iter(arr_c, std::size(arr_c), print<char>);
 	std::cout << std::endl;
 
