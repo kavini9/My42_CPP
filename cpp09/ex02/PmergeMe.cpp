@@ -39,11 +39,13 @@ void PmergeMe::run(char** rawSeq) {
 	printSequence("Before:", _intSeq);
 
 	const Clock::time_point vecStart = Clock::now();
+	generateJacobsthal(_intSeq.size());
 	std::vector<int> vecSeq(_intSeq);
 	sortMergeInsert(vecSeq);
 	const Clock::time_point vecEnd = Clock::now();
 
 	const Clock::time_point deqStart = Clock::now();
+	generateJacobsthal(_intSeq.size());
 	std::deque<int> deqSeq(_intSeq.begin(), _intSeq.end());
 	sortMergeInsert(deqSeq);
 	const Clock::time_point deqEnd = Clock::now();

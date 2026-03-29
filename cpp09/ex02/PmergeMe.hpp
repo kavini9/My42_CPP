@@ -56,7 +56,7 @@ class PmergeMe {
 				return;
 			int straggler = seqSize % 2 ? seq.back() : -1;
 			if (straggler != -1)
-				seq.pop_back();
+				seq.pop_back(); --seqSize;
 			std::vector<std::pair<int, int>> pairs;
 			Container main;
 			
@@ -87,13 +87,15 @@ class PmergeMe {
 			if (!pend.empty())
 				lastJacobJump = 1;
 
-			for (int i = 1; _jacobsthalSeq[i] < static_cast<int>(pend.size()); ++i) {//this condition is loose. might not iterate in the last run
+			for (int i = 1; i < static_cast<int>(_jacobsthalSeq.size()); ++i) {//this condition is loose. might not iterate in the last run
 				int maxId = std::min(_jacobsthalSeq[i], static_cast<int>(pend.size()));
 				for (int j = maxId; j > lastJacobJump; --j) {
 					int b = pend[j - 1];
 					auto iter = std::lower_bound(main.begin(), main.end(), b);
 					main.insert(iter, b);
 				}
+                if (maxId == static_cast<int>(pend.size()))
+                    break;
 				lastJacobJump = maxId;
 			}
 			seq = main;
