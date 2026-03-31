@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/29 06:50:22 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/31 20:39:47 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ void PmergeMe::parseSequence(char** rawSeq) {
 
 void PmergeMe::printElapsedTime(const std::string& contType, size_t contSize, double elapsedUs) {
 	std::cout << "Time to process a range of " SET_GRN << contSize << RESET " elements with " << contType
-		<< " : " << std::fixed << std::setprecision(5) << SET_GRN << elapsedUs << " us" RESET << std::endl;
+		<< "	: " << std::fixed << std::setprecision(5) << SET_GRN << elapsedUs << " us" RESET << std::endl;
 }
 
 void PmergeMe::run(char** rawSeq) {
 	parseSequence(rawSeq);
-	printSequence("Before:", _intSeq);
+	printSequence("Before:	", _intSeq);
 
 	const Clock::time_point vecStart = Clock::now();
 	generateJacobsthal(_intSeq.size());
@@ -50,7 +50,7 @@ void PmergeMe::run(char** rawSeq) {
 	sortMergeInsert(deqSeq);
 	const Clock::time_point deqEnd = Clock::now();
 
-	printSequence("After:", vecSeq);
+	printSequence("After:	", vecSeq);
 	printElapsedTime("std::vector", vecSeq.size(), Duration(vecEnd - vecStart).count());
 	printElapsedTime("std::deque", deqSeq.size(), Duration(deqEnd - deqStart).count());
 }

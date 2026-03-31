@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:40:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/29 06:48:58 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/31 22:28:38 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 #include <ranges>
 
 #define SET_RED		"\033[31m"
-#define SET_GRN		"\033[32m"
+#define SET_GRN		"\033[33m"
 #define RESET		"\033[0m"
+#define INVALID		-1
 
 class PmergeMe {
 	private:
@@ -55,8 +56,8 @@ class PmergeMe {
 			size_t seqSize = seq.size();
 			if (seqSize < 2)
 				return;
-			int straggler = seqSize % 2 ? seq.back() : -1;
-			if (straggler != -1) {
+			int straggler = seqSize % 2 ? seq.back() : INVALID;
+			if (straggler != INVALID) {
 					seq.pop_back();
 					--seqSize;			
 			}
@@ -77,12 +78,12 @@ class PmergeMe {
 				for (std::pair<int, int>& p: pairs) {
 					if (p.first == a) {
 						pend.push_back(p.second);
-						p.first = -1;
+						p.first = INVALID;
 						break;
 					}
 				}
 			}
-			if (straggler != -1) 
+			if (straggler != INVALID) 
 				pend.push_back(straggler);
 			int lastJacobJump = 0;
 			if (!pend.empty())

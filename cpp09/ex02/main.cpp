@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:51 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/29 06:45:01 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/31 20:52:02 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int main(int ac, char** av) {
 		return (EXIT_FAILURE);
 	}
 	try {
-		PmergeMe app;
-		app.run(&av[1]);
+		PmergeMe sort;
+		sort.run(&av[1]);
 	} catch (const std::exception& e) {
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << SET_RED "Error: " << e.what() << RESET << std::endl;
 		return EXIT_FAILURE;
 	}
 	return (EXIT_SUCCESS);
