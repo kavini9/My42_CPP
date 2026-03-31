@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:21 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/22 17:26:41 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/03/31 21:01:45 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void BitcoinExchange::queryDatabase(std::ifstream& queryFile) const
 			double value		= std::stod(matches[5].str());
 
 			if (!std::chrono::year_month_day{year, month, day}.ok())
-				throw std::runtime_error("bad input => " + dateStr);
+				throw std::runtime_error("date not ok => " + dateStr);
 			if (value < 0)
 				throw std::runtime_error("not a positive number.");
 			if (value > 1000)
