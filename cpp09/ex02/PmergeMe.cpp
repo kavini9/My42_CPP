@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/31 20:39:47 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/04/02 22:16:25 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ using Duration = std::chrono::duration<double, std::micro>;
 
 void PmergeMe::parseSequence(char** rawSeq) {
 	for (int i = 0; rawSeq[i] != nullptr; ++i) {
+		if (rawSeq[i][0] == '\0')
+			throw std::runtime_error("empty argument found");
 		char* pEnd = nullptr;
 		long num = strtol(rawSeq[i], &pEnd, 10);
 		if (pEnd && *pEnd != '\0')
 			throw std::runtime_error("non-numeric character found.");
 		if (num < 0)
-			throw std::runtime_error("negative integer found.");
+			throw std::runtime_error("non-positive integer found.");
 		if (num > INT_MAX)    
 			throw std::runtime_error("integer overflow.");
 		_intSeq.push_back(static_cast<int>(num));

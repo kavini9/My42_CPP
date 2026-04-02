@@ -156,6 +156,8 @@ run_success_case "Duplicate-heavy mixed" 3 6 4 2 6 5 7 6 6 9 8 6 6 3
 
 # Invalid-input/error cases
 run_error_case "No argument"
+run_error_case "Empty argument" ""
+run_error_case "Empty argument in the mix" 3 1 8 "" 2
 run_error_case "Negative not allowed" 34 -1 78 90
 run_error_case "Non-numeric token i" 1a 2
 run_error_case "Non-numeric token ii" 100 +-1 2

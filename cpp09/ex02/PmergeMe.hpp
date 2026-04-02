@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:40:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/03/31 22:28:38 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/04/02 20:36:26 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PMERGEME_HPP
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <deque>
 #include <stdexcept>
