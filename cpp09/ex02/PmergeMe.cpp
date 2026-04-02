@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:39:59 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/04/02 22:16:25 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/04/02 22:47:41 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void PmergeMe::parseSequence(char** rawSeq) {
 		if (pEnd && *pEnd != '\0')
 			throw std::runtime_error("non-numeric character found.");
 		if (num < 0)
-			throw std::runtime_error("non-positive integer found.");
+			throw std::runtime_error("negative integer found.");
 		if (num > INT_MAX)    
 			throw std::runtime_error("integer overflow.");
 		_intSeq.push_back(static_cast<int>(num));
