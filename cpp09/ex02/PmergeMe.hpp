@@ -6,7 +6,7 @@
 /*   By: wweerasi <wweerasi@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 22:40:04 by wweerasi          #+#    #+#             */
-/*   Updated: 2026/04/02 20:36:26 by wweerasi         ###   ########.fr       */
+/*   Updated: 2026/04/04 21:05:16 by wweerasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,20 @@ class PmergeMe {
 			if (straggler != INVALID) 
 				pend.push_back(straggler);
 			int lastJacobJump = 0;
-			if (!pend.empty())
+			int addedToMain = 0;
+			if (!pend.empty()) {
 				main.insert(main.begin(), pend[0]);
-			if (!pend.empty())
 				lastJacobJump = 1;
+				addedToMain++;
+			}
 
 			for (int i = 1; i < static_cast<int>(_jacobsthalSeq.size()); ++i) {
 				int maxId = std::min(_jacobsthalSeq[i], static_cast<int>(pend.size()));
 				for (int j = maxId; j > lastJacobJump; --j) {
 					int b = pend[j - 1];
-					auto iter = std::lower_bound(main.begin(), main.end(), b);
+					auto iter = std::lower_bound(main.begin(), main.begin() + j + addedToMain - 1 , b);
 					main.insert(iter, b);
+					addedToMain++;
 				}
                 if (maxId == static_cast<int>(pend.size()))
                     break;
